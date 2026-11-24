@@ -1,0 +1,24 @@
+\begin{table}[t]
+\centering
+\caption{The ranking prior is a property of the space. A surrogate fitted on one dataset ranks another with \emph{no target label at all}; \emph{own} is the same model fitted on the target instead, over identical splits. Top: the FractalNet space of this study. Bottom: NAS-Bench-201~\cite{dong2020nasbench201} (1{,}000 labels, 20 splits). On NAS-Bench-201 every transfer out of a harder dataset beats fitting on the target\textquotesingle s own labels; on the FractalNet space, against 500 target labels, it does not.}
+\label{tab:transfer}
+\footnotesize
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{llccc}
+\toprule
+Fitted on & Applied to & $\rho$ & own & epoch \\
+\midrule
+\multicolumn{5}{l}{\emph{FractalNet space (this study); own $=$ 500 target labels}} \\
+\quad C10 & C100 & \textbf{0.873} & 0.872 & 0.889 \\
+\quad C100 & C10 & 0.891 & 0.915 & 0.934 \\
+\addlinespace[2pt]\midrule
+\multicolumn{5}{l}{\emph{NAS-Bench-201, 15{,}625 architectures; own $=$ 1{,}000 target labels}} \\
+\quad IN16 & C100 & \textbf{0.892} & 0.856 & --- \\
+\quad IN16 & C10 & \textbf{0.887} & 0.737 & --- \\
+\quad C100 & C10 & \textbf{0.843} & 0.737 & --- \\
+\quad C100 & IN16 & 0.842 & 0.910 & --- \\
+\quad C10 & C100 & 0.748 & 0.856 & --- \\
+\quad C10 & IN16 & 0.742 & 0.910 & --- \\
+\bottomrule
+\end{tabular}}
+\end{table}

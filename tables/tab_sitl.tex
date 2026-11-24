@@ -1,0 +1,25 @@
+\begin{table}[t]
+\centering
+\caption{Model-in-the-loop search, at an identical number of \emph{trained}
+architectures. The model is a ridge genuinely refitted on what the loop has
+measured. Started from scratch it is worse than training every individual: the
+measured set is whatever the loop chose, so the model never becomes good enough to
+choose with. Started from the surrogate fitted on the \emph{other dataset}, which
+costs no label here, it is better at every budget and most at the smallest.}
+\label{tab:sitl}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lcccccc}
+\toprule
+& \multicolumn{3}{c}{CIFAR-10} & \multicolumn{3}{c}{CIFAR-100} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}
+Trained architectures & 120 & 260 & 520 & 120 & 260 & 520 \\
+\midrule
+GA, every individual trained & 87.89 & 92.13 & 94.31 & 44.04 & 48.89 & 51.34 \\
+Model in the loop, from scratch & 81.25 & 83.46 & 81.88 & 36.37 & 37.04 & 37.03 \\
+\quad $+$ random exploration & 83.49 & 88.16 & 90.46 & 39.75 & 44.27 & 47.79 \\
+\quad $+$ transferred prior & 92.52 & 92.95 & 93.53 & 48.46 & 50.02 & 51.56 \\
+\midrule
+\textbf{Transferred prior $-$ GA} & \textbf{+4.62} & \textbf{+0.82} & \textbf{-0.79} & \textbf{+4.42} & \textbf{+1.13} & \textbf{+0.23} \\
+\bottomrule
+\end{tabular}}
+\end{table}

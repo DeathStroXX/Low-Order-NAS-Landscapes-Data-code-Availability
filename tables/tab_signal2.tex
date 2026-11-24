@@ -1,0 +1,19 @@
+\begin{table}[!htb]
+\centering
+\caption{What each available signal is worth. \emph{Cost} is training epochs per candidate screened. $\rho$ is against the 3-epoch reference and $\rho_{10}$ inside its top decile; $k^{\star}$ is the smallest shortlist whose regret---the accuracy given up by training only the $k$ highest-ranked candidates---falls below a tenth of a point. The surrogate is fitted on a disjoint half of the record, 40 splits.}
+\label{tab:signal}
+\footnotesize
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lccccccc}
+\toprule
+& & \multicolumn{3}{c}{CIFAR-10} & \multicolumn{3}{c}{CIFAR-100} \\
+\cmidrule(lr){3-5}\cmidrule(lr){6-8}
+Signal & Cost & $\rho$ & $\rho_{10}$ & $k^{\star}$ & $\rho$ & $\rho_{10}$ & $k^{\star}$ \\
+\midrule
+Genotype surrogate (free) & 0 & 0.951 & 0.622 & 10 & 0.923 & 0.714 & \textbf{10} \\
+One measured training epoch & 1 & 0.923 & 0.500 & \textbf{5} & 0.891 & 0.683 & 20 \\
+Surrogate $+$ epoch, fused 2:1 & 1 & \textbf{0.967} & \textbf{0.633} & \textbf{5} & \textbf{0.949} & \textbf{0.772} & \textbf{10} \\
+LoRA-tuned 7B predictor (the fitness) & 3 & 0.432 & 0.225 & $>\!100$ & 0.420 & 0.063 & $>\!100$ \\
+\bottomrule
+\end{tabular}}
+\end{table}

@@ -1,0 +1,30 @@
+\begin{table}[h]
+\centering\footnotesize
+\caption{Recalibrate, transfer, or both, on NAS-Bench-201: the same degree-2 ridge on the same fit sets, fitted on the target\textquotesingle s own recalibrated labels, on the transfer source\textquotesingle s labels raw or recalibrated, or on both (rank-average of the two recalibrated predictions); mean $\pm$ standard error over 20 draws. Produced by \texttt{analysis/s53\_spectrum.py}.}
+\label{tab:recal_full}
+\setlength{\tabcolsep}{2.6pt}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{l r cccc cccc}
+\toprule
+& & \multicolumn{4}{c}{Spearman $\rho$} & \multicolumn{4}{c}{regret at ten} \\
+\cmidrule(lr){3-6}\cmidrule(lr){7-10}
+Target & $n$ & own, recal. & transf., raw & transf., recal. & both & own, recal. & transf., raw & transf., recal. & both \\
+\midrule
+\multicolumn{10}{l}{\emph{C10; transfer from IN16}} \\
+\quad & 100 & 0.795\tiny{$\pm$0.004} & 0.735\tiny{$\pm$0.007} & 0.767\tiny{$\pm$0.006} & 0.790\tiny{$\pm$0.005} & 0.36\tiny{$\pm$0.07} & 0.61\tiny{$\pm$0.08} & 0.43\tiny{$\pm$0.07} & 0.40\tiny{$\pm$0.08} \\
+\quad & 250 & 0.864\tiny{$\pm$0.002} & 0.806\tiny{$\pm$0.004} & 0.835\tiny{$\pm$0.003} & 0.860\tiny{$\pm$0.002} & 0.36\tiny{$\pm$0.06} & 0.91\tiny{$\pm$0.08} & 0.54\tiny{$\pm$0.06} & 0.35\tiny{$\pm$0.06} \\
+\quad & 500 & 0.911\tiny{$\pm$0.001} & 0.852\tiny{$\pm$0.002} & 0.883\tiny{$\pm$0.002} & 0.906\tiny{$\pm$0.001} & 0.19\tiny{$\pm$0.06} & 0.56\tiny{$\pm$0.09} & 0.36\tiny{$\pm$0.05} & 0.22\tiny{$\pm$0.06} \\
+\quad & 1000 & 0.935\tiny{$\pm$0.000} & 0.879\tiny{$\pm$0.001} & 0.908\tiny{$\pm$0.001} & 0.928\tiny{$\pm$0.001} & 0.05\tiny{$\pm$0.02} & 0.52\tiny{$\pm$0.08} & 0.34\tiny{$\pm$0.05} & 0.18\tiny{$\pm$0.05} \\
+\multicolumn{10}{l}{\emph{C100; transfer from IN16}} \\
+\quad & 100 & 0.782\tiny{$\pm$0.005} & 0.741\tiny{$\pm$0.007} & 0.770\tiny{$\pm$0.005} & 0.784\tiny{$\pm$0.005} & 0.47\tiny{$\pm$0.13} & 1.01\tiny{$\pm$0.15} & 0.58\tiny{$\pm$0.15} & 0.52\tiny{$\pm$0.12} \\
+\quad & 250 & 0.847\tiny{$\pm$0.003} & 0.810\tiny{$\pm$0.004} & 0.835\tiny{$\pm$0.003} & 0.851\tiny{$\pm$0.003} & 0.52\tiny{$\pm$0.09} & 1.63\tiny{$\pm$0.22} & 0.71\tiny{$\pm$0.09} & 0.55\tiny{$\pm$0.09} \\
+\quad & 500 & 0.899\tiny{$\pm$0.001} & 0.855\tiny{$\pm$0.002} & 0.881\tiny{$\pm$0.002} & 0.898\tiny{$\pm$0.001} & 0.18\tiny{$\pm$0.07} & 0.88\tiny{$\pm$0.24} & 0.33\tiny{$\pm$0.09} & 0.17\tiny{$\pm$0.06} \\
+\quad & 1000 & 0.926\tiny{$\pm$0.000} & 0.882\tiny{$\pm$0.001} & 0.906\tiny{$\pm$0.001} & 0.922\tiny{$\pm$0.001} & 0.03\tiny{$\pm$0.01} & 0.68\tiny{$\pm$0.24} & 0.22\tiny{$\pm$0.09} & 0.07\tiny{$\pm$0.04} \\
+\multicolumn{10}{l}{\emph{IN16; transfer from C100}} \\
+\quad & 100 & 0.778\tiny{$\pm$0.005} & 0.670\tiny{$\pm$0.012} & 0.771\tiny{$\pm$0.005} & 0.783\tiny{$\pm$0.005} & 0.84\tiny{$\pm$0.13} & 2.06\tiny{$\pm$0.25} & 0.74\tiny{$\pm$0.12} & 0.76\tiny{$\pm$0.12} \\
+\quad & 250 & 0.846\tiny{$\pm$0.003} & 0.718\tiny{$\pm$0.006} & 0.832\tiny{$\pm$0.003} & 0.849\tiny{$\pm$0.002} & 0.76\tiny{$\pm$0.10} & 2.91\tiny{$\pm$0.23} & 0.71\tiny{$\pm$0.12} & 0.58\tiny{$\pm$0.09} \\
+\quad & 500 & 0.896\tiny{$\pm$0.001} & 0.766\tiny{$\pm$0.004} & 0.884\tiny{$\pm$0.002} & 0.898\tiny{$\pm$0.001} & 0.60\tiny{$\pm$0.10} & 3.53\tiny{$\pm$0.26} & 0.26\tiny{$\pm$0.07} & 0.46\tiny{$\pm$0.09} \\
+\quad & 1000 & 0.923\tiny{$\pm$0.000} & 0.812\tiny{$\pm$0.002} & 0.911\tiny{$\pm$0.001} & 0.923\tiny{$\pm$0.000} & 0.37\tiny{$\pm$0.07} & 3.95\tiny{$\pm$0.21} & 0.20\tiny{$\pm$0.07} & 0.25\tiny{$\pm$0.07} \\
+\bottomrule
+\end{tabular}}
+\end{table}

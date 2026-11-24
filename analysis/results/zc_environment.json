@@ -1,0 +1,9 @@
+{
+ "zc_file": "zc_nasbench201.json.xz",
+ "zc_sha256": "cdeb4b60137ed39545a9846fb1143b7121ea651722e3c95159ba525f4f6ca176",
+ "zc_reference": "Krishnakumar et al., NAS-Bench-Suite-Zero, NeurIPS 2022 D&B",
+ "accuracy_table": "nb201_all.pickle (NASLib redistribution of NAS-Bench-201)",
+ "target": "final test accuracy (eval_acc1es), as everywhere else in the paper",
+ "alignment_check": "validation accuracy identical for all 15,625 cells",
+ "numpy": "2.5.3"
+}

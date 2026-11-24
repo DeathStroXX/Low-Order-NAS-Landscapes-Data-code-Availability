@@ -1,0 +1,374 @@
+{
+ "checks": {
+  "any_ranker_beats_the_exhibited_optimum": false,
+  "rankers_above_the_reference": [],
+  "recalibration_improves_the_projection": true,
+  "reference_is_100_percent": true
+ },
+ "datasets": [
+  "cifar10",
+  "cifar100",
+  "ImageNet16-120"
+ ],
+ "n_arch": 15625,
+ "reference": {
+  "per_dataset": {
+   "ImageNet16-120": {
+    "ceiling_r2": 0.882449295245584,
+    "regret10": 0.0,
+    "regret10_raw": 1.3599999999999994,
+    "rho": 0.9463553214802145,
+    "rho_raw": 0.9274483732992773
+   },
+   "cifar10": {
+    "ceiling_r2": 0.6793046566998742,
+    "regret10": 0.0,
+    "regret10_raw": 1.3000000000000114,
+    "rho": 0.9555928826312315,
+    "rho_raw": 0.7503676488027146
+   },
+   "cifar100": {
+    "ceiling_r2": 0.7814283718170497,
+    "regret10": 0.0,
+    "regret10_raw": 3.180000000000007,
+    "rho": 0.950822780957044,
+    "rho_raw": 0.8612548740362909
+   }
+  },
+  "what": "the exact degree-2 projection of the recalibrated response, g_2; an attainable value, so a lower bound on the best degree-2 ranker rather than the optimum itself"
+ },
+ "rows": [
+  {
+   "group": "exact",
+   "key": "g2_recal",
+   "label": "exact $g_2$, recalibrated",
+   "note": "the squared-error-optimal degree-2 function of the recalibrated response; the reference every other row is a percentage of",
+   "per_dataset": {
+    "ImageNet16-120": {
+     "realization_rho": 100.0,
+     "regret10": 0.0,
+     "rho": 0.9463553214802145
+    },
+    "cifar10": {
+     "realization_rho": 100.0,
+     "regret10": 0.0,
+     "rho": 0.9555928826312315
+    },
+    "cifar100": {
+     "realization_rho": 100.0,
+     "regret10": 0.0,
+     "rho": 0.950822780957044
+    }
+   },
+   "realization_rho_mean": 100.0,
+   "regret10_mean": 0.0,
+   "rho_mean": 0.9509236616894966
+  },
+  {
+   "group": "exact",
+   "key": "g2_raw",
+   "label": "exact $g_2$, raw accuracy",
+   "note": "the same projection taken on raw accuracy: a different element of $\\mathcal{G}_2$, and a worse ranker",
+   "per_dataset": {
+    "ImageNet16-120": {
+     "realization_rho": 98.0021300930221,
+     "regret10": 1.3599999999999994,
+     "rho": 0.9274483732992773
+    },
+    "cifar10": {
+     "realization_rho": 78.52377957614881,
+     "regret10": 1.3000000000000114,
+     "rho": 0.7503676488027146
+    },
+    "cifar100": {
+     "realization_rho": 90.57995783077482,
+     "regret10": 3.180000000000007,
+     "rho": 0.8612548740362909
+    }
+   },
+   "realization_rho_mean": 89.03528916664858,
+   "regret10_mean": 1.9466666666666725,
+   "rho_mean": 0.8463569653794276
+  },
+  {
+   "group": "exact",
+   "key": "g1_recal",
+   "label": "exact $g_1$, recalibrated",
+   "note": "main effects only: what the additive part of the landscape is worth",
+   "per_dataset": {
+    "ImageNet16-120": {
+     "realization_rho": 87.99792022088444,
+     "regret10": 1.6000000000000014,
+     "rho": 0.8327730008022536
+    },
+    "cifar10": {
+     "realization_rho": 89.01236513220472,
+     "regret10": 0.9000000000000057,
+     "rho": 0.8505958258650723
+    },
+    "cifar100": {
+     "realization_rho": 88.76567414354878,
+     "regret10": 1.9200000000000017,
+     "rho": 0.8440042514269582
+    }
+   },
+   "realization_rho_mean": 88.59198649887931,
+   "regret10_mean": 1.4733333333333363,
+   "rho_mean": 0.8424576926980946
+  },
+  {
+   "group": "free",
+   "key": "proxy_best",
+   "label": "best single proxy (oracle choice)",
+   "note": "the best of the thirteen on each dataset, chosen on the target -- not deployable, and an upper bound on what choosing one could give",
+   "per_dataset": {
+    "ImageNet16-120": {
+     "realization_rho": 82.41484792155828,
+     "regret10": 1.1799999694824241,
+     "rho": 0.7799372989954927
+    },
+    "cifar10": {
+     "realization_rho": 82.83557420777464,
+     "regret10": 1.052000000000011,
+     "rho": 0.7915708514162066
+    },
+    "cifar100": {
+     "realization_rho": 84.66657303341094,
+     "regret10": 1.2389998883056612,
+     "rho": 0.8050290642573046
+    }
+   },
+   "realization_rho_mean": 83.30566505424795,
+   "regret10_mean": 1.156999952596032,
+   "rho_mean": 0.7921790715563346
+  },
+  {
+   "group": "free",
+   "key": "proxy_picked",
+   "label": "the proxy an honest rule picks",
+   "note": "chosen without reading a target label, which is what a deployment can actually do",
+   "per_dataset": {
+    "ImageNet16-120": {
+     "realization_rho": 79.37879875705242,
+     "regret10": 0.8866666687011723,
+     "rho": 0.751205486164436
+    },
+    "cifar10": {
+     "realization_rho": 73.04120954164847,
+     "regret10": 0.8940000000000012,
+     "rho": 0.6979765997677567
+    },
+    "cifar100": {
+     "realization_rho": 74.9847481802239,
+     "regret10": 1.3109999310302634,
+     "rho": 0.7129720679408413
+    }
+   },
+   "realization_rho_mean": 75.80158549297494,
+   "regret10_mean": 1.030555533243812,
+   "rho_mean": 0.7207180512910113
+  },
+  {
+   "group": "free",
+   "key": "transfer",
+   "label": "transferred degree-2 surrogate",
+   "note": "fitted on the hardest other dataset; no target label",
+   "per_dataset": {
+    "ImageNet16-120": {
+     "realization_rho": 88.99850526084789,
+     "regret10": 3.164999976094563,
+     "rho": 0.8422420905738827
+    },
+    "cifar10": {
+     "realization_rho": 92.83746904461114,
+     "regret10": 0.20550000000000496,
+     "rho": 0.8871482466052768
+    },
+    "cifar100": {
+     "realization_rho": 93.7993746318086,
+     "regret10": 0.11699998229980366,
+     "rho": 0.8918658223944785
+    }
+   },
+   "realization_rho_mean": 91.87844964575588,
+   "regret10_mean": 1.162499986131457,
+   "rho_mean": 0.8737520531912127
+  },
+  {
+   "group": "free",
+   "key": "fused",
+   "label": "fusion: transferred surrogate + picked proxy",
+   "note": "the untuned 2:1 rank average of Section VII, which is the deployable object",
+   "per_dataset": {
+    "ImageNet16-120": {
+     "realization_rho": 91.95065303812451,
+     "regret10": 1.3383333384195957,
+     "rho": 0.8701798981620998
+    },
+    "cifar10": {
+     "realization_rho": 91.74927321413985,
+     "regret10": 0.1235000000000035,
+     "rho": 0.8767495247002033
+    },
+    "cifar100": {
+     "realization_rho": 93.1212788187651,
+     "regret10": 0.19699999877929245,
+     "rho": 0.8854183329273451
+    }
+   },
+   "realization_rho_mean": 92.27373502367648,
+   "regret10_mean": 0.5529444457329639,
+   "rho_mean": 0.8774492519298827
+  },
+  {
+   "group": "fitted",
+   "key": "ridge_raw_1000",
+   "label": "degree-2 ridge, raw, 1{,}000 labels",
+   "note": "the same model fitted on the target, without the recalibration",
+   "per_dataset": {
+    "ImageNet16-120": {
+     "realization_rho": 95.51864238501254,
+     "regret10": 1.365499999999999,
+     "rho": 0.9039457552162219
+    },
+    "cifar10": {
+     "realization_rho": 71.37662316194954,
+     "regret10": 1.3195000000000079,
+     "rho": 0.6820699307981049
+    },
+    "cifar100": {
+     "realization_rho": 86.5732841194932,
+     "regret10": 3.2370000000000045,
+     "rho": 0.8231585076308082
+    }
+   },
+   "realization_rho_mean": 84.48951655548508,
+   "regret10_mean": 1.9740000000000038,
+   "rho_mean": 0.8030580645483782
+  },
+  {
+   "group": "fitted",
+   "key": "ridge_recal_1000",
+   "label": "degree-2 ridge, recalibrated, 1{,}000 labels",
+   "note": "the procedure of Algorithm 1 up to the fusion step",
+   "per_dataset": {
+    "ImageNet16-120": {
+     "realization_rho": 97.5159794470072,
+     "regret10": 0.37449999999999867,
+     "rho": 0.9228476607903049
+    },
+    "cifar10": {
+     "realization_rho": 97.8190624916314,
+     "regret10": 0.05150000000000219,
+     "rho": 0.9347519990266262
+    },
+    "cifar100": {
+     "realization_rho": 97.39752808639679,
+     "regret10": 0.026000000000002643,
+     "rho": 0.926077885134496
+    }
+   },
+   "realization_rho_mean": 97.57752334167846,
+   "regret10_mean": 0.15066666666666784,
+   "rho_mean": 0.927892514983809
+  },
+  {
+   "group": "learned",
+   "key": "learned_rf",
+   "label": "random forest",
+   "note": "refitted by s68_learned_predictors.py on the same 1,000 labels, under the same index draws as the ridge row above, and on the same recalibrated response; nothing tuned per dataset or against the evaluation set",
+   "per_dataset": {
+    "ImageNet16-120": {
+     "realization_rho": 94.51784884606954,
+     "regret10": 0.3969999999999988,
+     "rho": 0.8944746923034046
+    },
+    "cifar10": {
+     "realization_rho": 93.96222580692636,
+     "regret10": 0.1165000000000056,
+     "rho": 0.8978963421728746
+    },
+    "cifar100": {
+     "realization_rho": 93.10000094557034,
+     "regret10": 0.06200000000000401,
+     "rho": 0.8852160180617062
+    }
+   },
+   "realization_rho_mean": 93.8600251995221,
+   "regret10_mean": 0.1918333333333361,
+   "rho_mean": 0.8925290175126618
+  },
+  {
+   "group": "learned",
+   "key": "learned_gbdt",
+   "label": "gradient-boosted trees",
+   "note": "refitted by s68_learned_predictors.py on the same 1,000 labels, under the same index draws as the ridge row above, and on the same recalibrated response; nothing tuned per dataset or against the evaluation set",
+   "per_dataset": {
+    "ImageNet16-120": {
+     "realization_rho": 99.12259543696686,
+     "regret10": 0.28849999999999804,
+     "rho": 0.9380519567070402
+    },
+    "cifar10": {
+     "realization_rho": 98.98410157581641,
+     "regret10": 0.08350000000000221,
+     "rho": 0.9458850295949703
+    },
+    "cifar100": {
+     "realization_rho": 98.78178520713759,
+     "regret10": 0.1060000000000052,
+     "rho": 0.9392397171855196
+    }
+   },
+   "realization_rho_mean": 98.9628274066403,
+   "regret10_mean": 0.15933333333333513,
+   "rho_mean": 0.94105890116251
+  },
+  {
+   "group": "learned",
+   "key": "learned_mlp_path",
+   "label": "neural predictor, path encoding",
+   "note": "refitted by s68_learned_predictors.py on the same 1,000 labels, under the same index draws as the ridge row above, and on the same recalibrated response; nothing tuned per dataset or against the evaluation set",
+   "per_dataset": {
+    "ImageNet16-120": {
+     "realization_rho": 94.52291702143516,
+     "regret10": 1.5164999999999993,
+     "rho": 0.8945226552506791
+    },
+    "cifar10": {
+     "realization_rho": 96.17180119260412,
+     "regret10": 0.7610000000000057,
+     "rho": 0.9190108872947829
+    },
+    "cifar100": {
+     "realization_rho": 95.80604831828053,
+     "regret10": 1.4970000000000048,
+     "rho": 0.9109457329449242
+    }
+   },
+   "realization_rho_mean": 95.50025551077327,
+   "regret10_mean": 1.25816666666667,
+   "rho_mean": 0.9081597584967954
+  }
+ ],
+ "squared_error": {
+  "per_dataset": {
+   "ImageNet16-120": {
+    "ceiling": 0.882449295245584,
+    "held_out_r2": 0.84,
+    "realized_percent": 95.18960517343147
+   },
+   "cifar10": {
+    "ceiling": 0.6793046566998737,
+    "held_out_r2": 0.58,
+    "realized_percent": 85.38142559152985
+   },
+   "cifar100": {
+    "ceiling": 0.7814283718170499,
+    "held_out_r2": 0.7,
+    "realized_percent": 89.57954756266334
+   }
+  },
+  "what": "Proposition 1's quantity: the held-out R^2 of the fitted degree-2 ridge as a share of the exact degree-2 ceiling, which is a different question from the rank column and is kept in its own block for that reason"
+ }
+}

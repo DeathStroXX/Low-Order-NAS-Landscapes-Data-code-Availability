@@ -1,0 +1,24 @@
+\begin{table}[t]
+\centering
+\caption{A free warm start against a weak selection signal. The GA is run with a
+selection signal corrupted to the rank fidelity shown; the warm-started arm differs
+only in that its initial population is the best 20 of 50{,}000 candidates screened
+for free by the genotype surrogate. Bold: the fidelity of the pipeline's own LLM
+predictor on each dataset ($\rho=0.58$ and $0.33$).}
+\label{tab:warmstart}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lcccc}
+\toprule
+& \multicolumn{2}{c}{CIFAR-10} & \multicolumn{2}{c}{CIFAR-100} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+Selection signal & Cold & Warm & Cold & Warm \\
+\midrule
+Exact ($\rho=1$) & 91.71 & 93.06 & 48.42 & 51.32 \\
+$\rho=0.33$ & 85.97 & 90.93 & 42.51 & \textbf{50.53} \\
+$\rho=0.43$ & 86.64 & 91.02 & 43.59 & 50.55 \\
+$\rho=0.58$ & 87.60 & \textbf{91.10} & 44.87 & 50.57 \\
+$\rho=0.7$ & 88.34 & 91.26 & 45.97 & 50.63 \\
+$\rho=0.93$ & 90.23 & 91.89 & 47.65 & 50.89 \\
+\bottomrule
+\end{tabular}}
+\end{table}

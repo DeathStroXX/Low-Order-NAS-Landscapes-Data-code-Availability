@@ -1,0 +1,20 @@
+\begin{tabular}{l l r cc r}
+\toprule
+\textbf{Dataset} & \textbf{Selection signal} & \textbf{Cost} & $\rho$ \textbf{vs.\ 3-ep.} & \textbf{Top-10 kept} & \textbf{Hit@3} \\
+ & & \textbf{(epochs)} & & \textbf{(\%)} & \textbf{(\%)} \\
+\midrule
+\multirow{5}{*}{CIFAR-10}
+ & 1 epoch & 1 & 0.931$\pm$0.004 & 57.6 & 76 \\
+ & 2 epochs & 2 & 0.983$\pm$0.002 & 70.0 & 94 \\
+ & 2 epochs $+$ extrapolation & 2 & 0.958$\pm$0.005 & 37.1 & 24 \\
+ & LLM accuracy predictor & 3 $+$ LLM & 0.567$\pm$0.021 & 10.0 & 6 \\
+ & \textit{random selection} & 0 & 0.000 & 3.2 & -- \\
+\midrule
+\multirow{5}{*}{CIFAR-100}
+ & 1 epoch & 1 & 0.896$\pm$0.010 & 70.6 & 76 \\
+ & 2 epochs & 2 & 0.982$\pm$0.002 & 86.5 & 94 \\
+ & 2 epochs $+$ extrapolation & 2 & 0.979$\pm$0.002 & 81.2 & 94 \\
+ & LLM accuracy predictor & 3 $+$ LLM & 0.326$\pm$0.050 & 4.1 & 0 \\
+ & \textit{random selection} & 0 & 0.000 & 3.6 & -- \\
+\bottomrule
+\end{tabular}

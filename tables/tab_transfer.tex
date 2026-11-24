@@ -1,0 +1,27 @@
+\begin{table}[t]
+\centering
+\caption{Transfer of the genotype surrogate. Spearman $\rho$ against the 3-epoch
+reference on a held-out set the model never saw. ``Fitted here'' is the same model
+trained on target labels only; the transferred model with no target label at all
+already outranks it with 500.}
+\label{tab:transfer}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{llcc}
+\toprule
+Transfer & Fitted on & $\rho$ & Reference \\
+\midrule
+\multirow{3}{*}{CIFAR-10 $\to$ CIFAR-100} & CIFAR-10, 0 target labels & 0.873 & --- \\
+ & CIFAR-10 + 25 target labels & 0.880 & 0.509 \\
+ & CIFAR-10 + 500 target labels & 0.924 & 0.872 \\
+\cmidrule(l){2-4}
+\multirow{3}{*}{CIFAR-100 $\to$ CIFAR-10} & CIFAR-100, 0 target labels & 0.891 & --- \\
+ & CIFAR-100 + 25 target labels & 0.896 & 0.511 \\
+ & CIFAR-100 + 500 target labels & 0.946 & 0.915 \\
+\cmidrule(l){2-4}
+Baseline arm $\to$ LLM arms & CIFAR-10, 881 archs & 0.930 & 0.936 \\
+Baseline arm $\to$ LLM arms & CIFAR-100, 776 archs & 0.849 & 0.897 \\
+1-epoch labels $\to$ 3-epoch rank & CIFAR-10 & 0.934 & 0.968 \\
+1-epoch labels $\to$ 3-epoch rank & CIFAR-100 & 0.863 & 0.937 \\
+\bottomrule
+\end{tabular}}
+\end{table}

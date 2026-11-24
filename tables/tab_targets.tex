@@ -1,0 +1,38 @@
+\begin{table}[!t]
+\centering
+\caption{Other functions on the same complete factorial. \textbf{(a)} Parameter and FLOP counts are additive over the six edges by construction, so their spectrum is known before it is measured: recovering it is a correctness check, not a finding. \textbf{(b)} Latency is additive up to measurement error, so its order-6 share is this grid\textquotesingle s own noise floor---$6$ to $25$ times what accuracy shows there. \textbf{(c)} CIFAR-10 alone, pushed through $z\mapsto z^{p}$ on the accuracy rescaled to $[0,1]$: the predicted column is read off that one landscape\textquotesingle s curve at each task\textquotesingle s skewness. \textbf{(d)} What the free degree-2 ridge realizes of its ceiling. Produced by \texttt{analysis/s56\_targets.py}.}
+\label{tab:targets}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+\multicolumn{4}{@{}l}{\emph{(a) additive by construction, and the certificate}} \\
+target & order 1 & orders 2--6 & \\
+\midrule
+parameter count & $100.0000\%$ & $6e-24\%$ & \\
+FLOPs & $100.0000\%$ & $9e-23\%$ & \\
+training time & $99.4\%$ & $0.6\%$ & \\
+\addlinespace[2pt]
+\multicolumn{4}{@{}l}{\emph{(b) latency as a measured noise floor}} \\
+dataset & lat.\ order 1 & lat.\ order 6 & acc.\ order 6 \\
+\midrule
+cifar10 & $95.7\%$ & $0.845\%$ & $0.136\%$ \\
+cifar100 & $88.7\%$ & $2.794\%$ & $0.133\%$ \\
+ImageNet16-120 & $76.6\%$ & $6.235\%$ & $0.247\%$ \\
+\addlinespace[2pt]
+\multicolumn{4}{@{}l}{\emph{(c) the three tasks against CIFAR-10\textquotesingle s own scale curve}} \\
+dataset & skewness & order $\le 2$ & predicted \\
+\midrule
+cifar10 & $-4.79$ & $67.9\%$ & $67.9\%$ \\
+cifar100 & $-3.19$ & $78.1\%$ & $76.5\%$ \\
+ImageNet16-120 & $-1.35$ & $88.2\%$ & $88.1\%$ \\
+\addlinespace[2pt]
+\multicolumn{4}{@{}l}{\emph{(d) realization of the degree-2 ceiling}} \\
+dataset & ceiling & held-out $R^{2}$ & realized \\
+\midrule
+cifar10 & $0.679$ & $+0.58$ & $85\%$ \\
+cifar100 & $0.781$ & $+0.70$ & $90\%$ \\
+ImageNet16-120 & $0.882$ & $+0.84$ & $95\%$ \\
+\bottomrule
+\end{tabular}
+\end{table}

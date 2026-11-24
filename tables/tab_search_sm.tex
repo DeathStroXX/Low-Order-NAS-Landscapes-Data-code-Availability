@@ -1,0 +1,34 @@
+\begin{table}[t]
+\centering
+\caption{The statistics behind Table~IV of the main paper. The \emph{difference of means} block is the gap to a baseline: $\star$ marks a 95\% interval excluding zero, $\circ$ a tie. Seeds are independent streams, so the interval is two-sample. That interval is the primary test, because the claim is a difference in accuracy points; the Mann--Whitney $U$ test reported beside it in \texttt{nb201\_search.json} tests stochastic dominance instead, so the two can part, and every cell where they do is listed there. The contrast against regularized evolution is given at all three budgets and summarized over all 21 cells. The GPU-hours are the benchmark\textquotesingle s own record for the cells queried. The last block prices the single-column protocol C100 and IN16 are forced into, by rerunning the replay on CIFAR-10---which carries both columns---with the test column as the search signal: the optimism is 0.13--0.33 points, and wherever it reorders two algorithms, at $N{=}50, 100, 500$, those two already overlap in their intervals under the proper protocol, so no distinguishable row moves past another.}
+\label{tab:search_sm}
+\footnotesize
+\setlength{\tabcolsep}{3.0pt}
+\begin{tabular}{l ccc}
+\toprule
+ & C10 & C100 & IN16 \\
+\midrule
+\multicolumn{4}{l}{\emph{difference of means, with its 95\% interval}} \\
+\multicolumn{4}{l}{\quad\footnotesize against random search, at $N{=}100$} \\
+\quad Evolution & +0.29$^{\star}$ \tiny[+0.25, +0.33] & +1.17$^{\star}$ \tiny[+1.09, +1.25] & +0.94$^{\star}$ \tiny[+0.87, +1.01] \\
+\quad Local & +0.19$^{\star}$ \tiny[+0.15, +0.23] & +0.88$^{\star}$ \tiny[+0.78, +0.99] & +0.62$^{\star}$ \tiny[+0.54, +0.71] \\
+\quad Recipe & +0.31$^{\star}$ \tiny[+0.27, +0.35] & +1.03$^{\star}$ \tiny[+0.94, +1.11] & +1.00$^{\star}$ \tiny[+0.93, +1.06] \\
+\multicolumn{4}{l}{\quad\footnotesize against regularized evolution, by budget} \\
+\quad Recipe, $N{=}20$ & +0.13$^{\star}$ \tiny[+0.07, +0.19] & +0.47$^{\star}$ \tiny[+0.33, +0.61] & +0.31$^{\star}$ \tiny[+0.15, +0.47] \\
+\quad Recipe, $N{=}100$ & +0.02$^{\circ}$ \tiny[-0.02, +0.06] & -0.14$^{\star}$ \tiny[-0.22, -0.06] & +0.05$^{\circ}$ \tiny[-0.01, +0.11] \\
+\quad Recipe, $N{=}500$ & +0.04$^{\star}$ \tiny[+0.03, +0.06] & +0.01$^{\star}$ \tiny[+0.01, +0.02] & +0.09$^{\star}$ \tiny[+0.07, +0.10] \\
+\multicolumn{4}{l}{\quad\footnotesize over all 21 budget-by-dataset cells the recipe is ahead in 14, tied in 5, behind in 2} \\
+\addlinespace[2pt]\midrule
+\multicolumn{4}{l}{\emph{median GPU-hours the $N{=}100$ queries imply}} \\
+\quad Random & 51 & 102 & 308 \\
+\quad Evolution & 60 & 125 & 377 \\
+\quad Local & 56 & 118 & 359 \\
+\quad Recipe & 63 & 129 & 384 \\
+\addlinespace[2pt]\midrule
+\multicolumn{4}{l}{\emph{single-column protocol, priced on C10: points of optimism at $N{=}100$}} \\
+\quad Random & 0.13 & \quad Evolution & 0.28 \\
+\quad Local & 0.33 & \quad Recipe & 0.23 \\
+\multicolumn{4}{l}{\quad\footnotesize spread across the four algorithms 0.21 points} \\
+\bottomrule
+\end{tabular}
+\end{table}

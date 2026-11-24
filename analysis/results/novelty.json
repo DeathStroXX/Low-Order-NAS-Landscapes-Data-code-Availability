@@ -1,0 +1,68 @@
+{
+ "claims": [
+  {
+   "claim": "The amplitude spectrum of a NAS landscape, measured exactly",
+   "evidence": "order $\\le 2$ carries 67.9--88.2\\% of accuracy variance, order $\\le 3$ carries 93.4--96.7\\%",
+   "prior": "Amplitude spectra~\\cite{hordijk1998amplitude}; Fourier analysis of landscapes~\\cite{weinberger1991fourier}; fANOVA~\\cite{hutter2014fanova}; \\emph{exact} fANOVA on complete grids, reported to order eleven~\\cite{pushak2022automl}; exact fANOVA on an enumerated architecture grid~\\cite{klein2019tabular}; the exact closed form for categorical inputs~\\cite{ferrere2026exact}; exact Fourier decomposition of combinatorial objectives~\\cite{elorza2025fourier}",
+   "prior_says": "Decomposing a function by interaction order is standard; the exact closed form for categorical inputs is known in full generality; and the exact decomposition has been computed on complete AutoML grids to order eleven and on an enumerated architecture grid to order two. We find no instance of it applied to a NAS landscape.",
+   "we_add": "The apparatus is prior art and is used as such. What is new is the landscape it is turned on, and the answer is not a foregone conclusion: the same exact decomposition makes AutoML loss landscapes \\emph{high}-order ($17.01$--$28.58\\%\\ at order six against $0.15$--$4.50\\%\\ at order one~\\cite{pushak2022automl}) and makes two NAS spaces low-order. The contribution is the measurement and its consequences, not the method."
+  },
+  {
+   "claim": "A structural ceiling on any degree-$d$ predictor",
+   "evidence": "degree-2 ceiling 0.68--0.88; degree-3 ceiling 0.93--0.97",
+   "prior": "Predictor comparisons~\\cite{white2021powerful,ning2021evaluating}; benchmark noise floors~\\cite{white2021exploring}",
+   "prior_says": "Cheap predictors are hard to beat, and some apparent ruggedness is seed noise. Neither yields a limit on what a predictor could achieve.",
+   "we_add": "Because the components are orthogonal, the cumulative spectrum upper-bounds the $R^{2}$ of any degree-$d$ function of the design variables, however much data it is given. The elaborate predictors compete for the few percent above order three."
+  },
+  {
+   "claim": "The task-dependence of landscape simplicity is an artifact of the scale",
+   "evidence": "order $\\le 2$ goes from 67.9, 78.1, 88.2\\% to 89.5, 88.4, 88.0\\% after recalibration",
+   "prior": "Tao and Bang~\\cite{tao2024landscape}; Lopes \\emph{et al.}~\\cite{lopes2024operation}; Chitra \\emph{et al.}~\\cite{chitra2025resolving}",
+   "prior_says": "On this exact space, correlation length grows with task difficulty, and searching on harder datasets is more reliable; the phenomenon is reported and no mechanism is offered. Separately, in biological fitness data, measures of higher-order interaction are known to disagree in sign with the scale they are defined on.",
+   "we_add": "We reproduce the ordering in the ANOVA basis and show it is the response scale, not the task: easy tasks are compressed against a ceiling, and a monotone recalibration collapses the three spectra onto one."
+  },
+  {
+   "claim": "Recalibrate first; a prior from a harder task mostly supplied a less compressed scale",
+   "evidence": "CIFAR-10 at 1{,}000 labels: $\\rho=0.935$ recalibrated against 0.879 raw-scale transfer, 0.908 recalibrated transfer and 0.682 raw; regret 0.05 against 0.52, 0.34 and 1.32",
+   "prior": "Cross-task predictors and cold-start work; the reliability ordering reported on this space~\\cite{tao2024landscape,lopes2024operation}",
+   "prior_says": "Harder datasets give longer correlation lengths and more reliable searches, and a prior fitted on a harder dataset ranks a target better than the same model fitted on a thousand of the target's own labels, so fit on the hardest dataset available.",
+   "we_add": "True as measured, but mostly a matter of scale. The transferred prior supplied a less compressed response; recalibrating the target's own labels beats raw-scale transfer at every budget on both metrics, recalibrating the source closes most of that gap, and in an uncompressed space recalibration buys almost nothing and can cost regret."
+  },
+  {
+   "claim": "Label complexity is a coefficient count, not a function of the space size",
+   "evidence": "1{,}514 cells covered at 3.5 and 3.1 labels each, from 0.010\\% of the grid",
+   "prior": "Brookes \\emph{et al.}~\\cite{brookes2022sparsity}",
+   "prior_says": "Protein and RNA fitness functions are sparse in the Fourier basis, so the labels needed are set by that sparsity rather than by the size of the space.",
+   "we_add": "The same argument holds in NAS, with consequences their setting does not have: a degree-2 model of a $10^{18}$-point space is identified by its pairwise coefficients, which a study that has already run owns without buying a sampling design."
+  },
+  {
+   "claim": "The scope boundary is a basis in which the function is not low-order",
+   "evidence": "held-out $R^{2}=-0.10$ on NAS-Bench-101 against $+0.58$ to $+0.84$ elsewhere; re-encoding lifts $\\rho$ from 0.499 to 0.692",
+   "prior": "White \\emph{et al.}~\\cite{white2020encodings}",
+   "prior_says": "Path encodings beat adjacency encodings, justified combinatorially by relabelling invariance and graceful truncation.",
+   "we_add": "The spectral reading of the same fact: a re-encoding adds no information, it moves the function to a lower order, and the held-out $R^{2}$ of a degree-2 fit measures whether it has. That makes the boundary testable before any budget is spent, and repairable for free."
+  },
+  {
+   "claim": "Rank correlation and regret at a shortlist disagree",
+   "evidence": "the surrogate leads in $\\rho$ yet $k^{\\star}=10$ against $50$ for a measured epoch; on NAS-Bench-201 SynFlow leads the shortlist on two of three datasets",
+   "prior": "Predictor comparisons~\\cite{white2021powerful,ning2021evaluating}; proxy surveys~\\cite{abdelfattah2021zerocost,shu2022unifying}",
+   "prior_says": "Cheap rankers are compared by rank correlation, per space.",
+   "we_add": "The two orderings disagree in both directions, so the correlation ranking does not answer the question a budget asks. Wherever a shortlist is chosen we report $k^{\\star}$, the smallest shortlist whose regret falls below a tenth of a point."
+  },
+  {
+   "claim": "Which free ranker is best is not identifiable without target labels",
+   "evidence": "an honest choice gives up $0.89$ points where an oracle gives up $0.21$; the untuned fusion wins by $0.77$",
+   "prior": "NAS-Bench-Suite-Zero~\\cite{krishnakumar2022nasbenchsuitezero}; the unifying analysis of~\\cite{shu2022unifying}",
+   "prior_says": "A per-space table of which proxy wins, computed with the target labels in hand.",
+   "we_add": "That table is an oracle quantity: choosing on the only labels a label-free deployment has costs most of the advantage. The deployable object is an untuned fusion, not a choice."
+  },
+  {
+   "claim": "Emulating a cheap signal by corrupting a reference can invert its conclusion",
+   "evidence": "a gain predicted against $-6.64$ to $-14.30$ measured, across budgets",
+   "prior": "Low-fidelity and surrogate benchmark studies~\\cite{zela2022surrogate,mehta2022nasbenchsuite}",
+   "prior_says": "A policy is priced without GPUs by degrading a measured reference to the cheap signal's fidelity.",
+   "we_add": "The device has a precondition that fails where it is most tempting: inside a model-in-the-loop search the fidelity is a function of what the policy measures, so the loop must be refitted and the shortcut inverts its sign."
+  }
+ ],
+ "n_claims": 9
+}

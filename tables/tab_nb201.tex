@@ -1,0 +1,29 @@
+\begin{table}[t]
+\centering
+\caption{The ranking signal on NAS-Bench-201~\cite{dong2020nasbench201}: 15{,}625 architectures, three datasets, a space we did not design. Top: the same pairwise ridge, fitted on $N$ labels and ranking every architecture held out, against the two zero-cost proxies the benchmark table supplies free. Middle: fitted on 1{,}000 labels of one dataset and applied to another with \emph{no target label}; \emph{own} is the same model fitted on the target. Bottom: the free shortlist, as accuracy points lost against the best of the 14{,}625 architectures held out.}
+\label{tab:nb201}
+\footnotesize
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lccc}
+\toprule
+ & CIFAR-10 & CIFAR-100 & ImageNet16-120 \\
+\midrule
+\multicolumn{4}{l}{\emph{Rank fidelity $\rho$ (Kendall $\tau$) against final accuracy}} \\
+\quad Genotype surrogate, 100 labels & 0.615 (0.441) & 0.713 (0.522) & 0.766 (0.573) \\
+\quad Genotype surrogate, 250 labels & 0.688 (0.501) & 0.800 (0.606) & 0.846 (0.658) \\
+\quad Genotype surrogate, 1000 labels & 0.737 (0.544) & 0.856 (0.670) & 0.910 (0.744) \\
+\quad Parameter count (zero-cost proxy) & 0.750 (0.575) & 0.725 (0.550) & 0.691 (0.519) \\
+\quad FLOPs (zero-cost proxy) & 0.750 (0.575) & 0.725 (0.550) & 0.691 (0.519) \\
+\addlinespace[2pt]\midrule
+\multicolumn{4}{l}{\emph{Transfer with zero target labels: $\rho$ / own $\rho$}} \\
+\quad fitted on C10 & --- & 0.748 / 0.856 & 0.742 / 0.910 \\
+\quad fitted on C100 & 0.843 / 0.737 & --- & 0.842 / 0.910 \\
+\quad fitted on IN16 & 0.887 / 0.737 & 0.892 / 0.856 & --- \\
+\addlinespace[2pt]\midrule
+\multicolumn{4}{l}{\emph{Regret of the free top-$k$ shortlist (accuracy points)}} \\
+\quad $k=1$ & 1.91 & 4.29 & 2.28 \\
+\quad $k=5$ & 1.43 & 3.03 & 0.64 \\
+\quad $k=20$ & 1.15 & 2.53 & 0.36 \\
+\bottomrule
+\end{tabular}}
+\end{table}

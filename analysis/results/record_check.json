@@ -1,0 +1,8 @@
+{
+ "rows": 10082,
+ "runs": 34,
+ "pairs_match_logs": true,
+ "accuracies_match_logs": true,
+ "genes_in_space": true,
+ "frozen_rows_checked_against_logged_chromosome": 2988
+}

@@ -1,0 +1,22 @@
+\begin{table}[t]
+\centering
+\caption{What a cheap signal is worth, in the unit the decision is made in. \emph{Regret at $k$} is the accuracy lost by training only the $k$ architectures a signal ranks highest, against training the whole pool; $\rho_{10}$ is rank fidelity inside the top decile. The surrogate is always fitted on a disjoint half of the record; \emph{transferred} uses no label of the target dataset at all. 40 random splits.}
+\label{tab:regret}
+\footnotesize
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lcccccc}
+\toprule
+& \multicolumn{3}{c}{CIFAR-10} & \multicolumn{3}{c}{CIFAR-100} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}
+Signal (epochs/candidate) & $\rho_{10}$ & $k{=}5$ & $k{=}20$ & $\rho_{10}$ & $k{=}5$ & $k{=}20$ \\
+\midrule
+Genotype surrogate, transferred (0) & 0.473 & 0.42 & 0.02 & 0.622 & 0.74 & 0.00 \\
+Genotype surrogate, fitted here (0) & 0.620 & 0.25 & 0.05 & 0.749 & 0.21 & 0.00 \\
+One measured epoch (1) & 0.560 & 0.41 & 0.14 & 0.690 & 0.42 & 0.02 \\
+Surrogate $+$ epoch, fused 2:1 (1) & 0.656 & 0.10 & 0.00 & 0.779 & 0.06 & 0.00 \\
+LoRA-tuned 7B predictor (1) & 0.073 & 3.70 & 2.81 & 0.092 & 23.22 & 17.12 \\
+\midrule
+Random shortlist (0) & --- & 9.92 & 5.31 & --- & 22.40 & 14.31 \\
+\bottomrule
+\end{tabular}}
+\end{table}

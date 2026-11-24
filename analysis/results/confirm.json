@@ -1,0 +1,188 @@
+{
+ "logdir": "/tmp/claude-0/-home-claude/c87e9bfc-a8b5-5e62-9f67-db87f3e16607/scratchpad/dryrun",
+ "n_log_files": 42,
+ "seeds_registered": [
+  4001,
+  4002,
+  4003
+ ],
+ "rule": "see analysis/confirm/PREREGISTRATION.md section 2",
+ "dry_run": true,
+ "half_threshold": 0.5,
+ "n_boot": 10000,
+ "claims": {
+  "C1": {
+   "section": "VIII",
+   "table": "S4",
+   "budget": "100 training epochs",
+   "treatment": "recipe",
+   "control": "flat",
+   "by_dataset": {
+    "cifar10": {
+     "status": "measured",
+     "seeds": [
+      4001,
+      4002,
+      4003
+     ],
+     "n": 3,
+     "treatment_mean": 86.49809409263946,
+     "control_mean": 78.91522925282386,
+     "diff": 7.582864839815589,
+     "diff_per_seed": [
+      14.480495568624406,
+      5.1797775148134235,
+      3.0883214360089397
+     ],
+     "ci": [
+      3.0883214360089397,
+      14.480495568624406
+     ],
+     "predicted": 4.28,
+     "threshold": 2.14,
+     "verdict": "confirmed",
+     "missing_seeds": []
+    },
+    "cifar100": {
+     "status": "measured",
+     "seeds": [
+      4001,
+      4002,
+      4003
+     ],
+     "n": 3,
+     "treatment_mean": 41.69209663944848,
+     "control_mean": 36.69982800231729,
+     "diff": 4.992268637131191,
+     "diff_per_seed": [
+      14.976805911393573,
+      0.0,
+      0.0
+     ],
+     "ci": [
+      0.0,
+      14.976805911393575
+     ],
+     "predicted": 7.95,
+     "threshold": 3.975,
+     "verdict": "unresolved",
+     "missing_seeds": []
+    }
+   }
+  },
+  "C2": {
+   "section": "VIII",
+   "table": "S5",
+   "budget": "120 trained architectures",
+   "treatment": "sitl-seeded",
+   "control": "train-all",
+   "by_dataset": {
+    "cifar10": {
+     "status": "measured",
+     "seeds": [
+      4001,
+      4002,
+      4003
+     ],
+     "n": 3,
+     "treatment_mean": 92.08997995872073,
+     "control_mean": 85.8628775758455,
+     "diff": 6.227102382875235,
+     "diff_per_seed": [
+      5.875802766782428,
+      9.269256247710075,
+      3.536248134133203
+     ],
+     "ci": [
+      3.536248134133203,
+      9.269256247710075
+     ],
+     "predicted": 4.18,
+     "threshold": 2.09,
+     "verdict": "confirmed",
+     "missing_seeds": []
+    },
+    "cifar100": {
+     "status": "measured",
+     "seeds": [
+      4001,
+      4002,
+      4003
+     ],
+     "n": 3,
+     "treatment_mean": 46.573553899570676,
+     "control_mean": 38.447149552104975,
+     "diff": 8.126404347465709,
+     "diff_per_seed": [
+      12.216021002239273,
+      4.194656590423747,
+      7.968535449734105
+     ],
+     "ci": [
+      4.194656590423747,
+      12.216021002239273
+     ],
+     "predicted": 4.76,
+     "threshold": 2.38,
+     "verdict": "confirmed",
+     "missing_seeds": []
+    }
+   }
+  }
+ },
+ "mechanism": {
+  "what": "Sec. VIII predicts the loop without a prior loses outright",
+  "by_dataset": {
+   "cifar10": {
+    "status": "measured",
+    "seeds": [
+     4001,
+     4002,
+     4003
+    ],
+    "n": 3,
+    "treatment_mean": 88.45833403816857,
+    "control_mean": 85.8628775758455,
+    "diff": 2.5954564623230802,
+    "diff_per_seed": [
+     3.157200740942258,
+     3.5986653296423015,
+     1.0305033163846815
+    ],
+    "ci": [
+     1.0305033163846815,
+     3.5986653296423015
+    ],
+    "predicted": -7.01,
+    "threshold": -3.505,
+    "verdict": "refuted",
+    "missing_seeds": []
+   },
+   "cifar100": {
+    "status": "measured",
+    "seeds": [
+     4001,
+     4002,
+     4003
+    ],
+    "n": 3,
+    "treatment_mean": 44.61320681962863,
+    "control_mean": 38.447149552104975,
+    "diff": 6.166057267523658,
+    "diff_per_seed": [
+     12.671612147434708,
+     3.6098840806201764,
+     2.2166755745160884
+    ],
+    "ci": [
+     2.2166755745160884,
+     12.671612147434708
+    ],
+    "predicted": -8.52,
+    "threshold": -4.26,
+    "verdict": "refuted",
+    "missing_seeds": []
+   }
+  }
+ }
+}

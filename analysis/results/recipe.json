@@ -1,0 +1,98 @@
+{
+ "cifar10": {
+  "n_fit": 2612,
+  "n_pool": 2707,
+  "cells": {
+   "A_train100": {
+    "acc": 80.6699175,
+    "lo": 80.60551175,
+    "hi": 80.73829337499998,
+    "epochs": 100,
+    "note": "train 100 for one epoch"
+   },
+   "B_screen800": {
+    "acc": 82.7050375,
+    "lo": 82.6608599375,
+    "hi": 82.74805462500001,
+    "epochs": 100,
+    "note": "screen 800, train 100"
+   },
+   "C_screen_halve": {
+    "acc": 83.40578500000001,
+    "lo": 83.38671681250001,
+    "hi": 83.42535718750001,
+    "epochs": 100,
+    "note": "screen 800, 73 x1ep, 18 x2ep, 9 x3ep"
+   },
+   "D_screen_halve_fused": {
+    "acc": 83.40334750000001,
+    "lo": 83.38382887500002,
+    "hi": 83.4222589375,
+    "epochs": 100,
+    "note": "as C, promotion fused with the surrogate 2:1"
+   },
+   "ref_three_epochs_33": {
+    "acc": 79.997375,
+    "lo": 79.930228875,
+    "hi": 80.060968,
+    "epochs": 99,
+    "note": "three epochs on 33 candidates"
+   },
+   "ref_surrogate_only": {
+    "acc": 82.29364249999999,
+    "lo": 82.25890112499998,
+    "hi": 82.329164,
+    "epochs": 0,
+    "note": "surrogate alone, no training"
+   }
+  }
+ },
+ "cifar100": {
+  "n_fit": 2298,
+  "n_pool": 2465,
+  "cells": {
+   "A_train100": {
+    "acc": 41.4821525,
+    "lo": 41.326642875,
+    "hi": 41.6253390625,
+    "epochs": 100,
+    "note": "train 100 for one epoch"
+   },
+   "B_screen800": {
+    "acc": 45.80548499999999,
+    "lo": 45.73223593749999,
+    "hi": 45.88208087499999,
+    "epochs": 100,
+    "note": "screen 800, train 100"
+   },
+   "C_screen_halve": {
+    "acc": 47.607572499999996,
+    "lo": 47.5658831875,
+    "hi": 47.6519955,
+    "epochs": 100,
+    "note": "screen 800, 73 x1ep, 18 x2ep, 9 x3ep"
+   },
+   "D_screen_halve_fused": {
+    "acc": 47.57916,
+    "lo": 47.5342584375,
+    "hi": 47.6222646875,
+    "epochs": 100,
+    "note": "as C, promotion fused with the surrogate 2:1"
+   },
+   "ref_three_epochs_33": {
+    "acc": 38.934830000000005,
+    "lo": 38.767700125,
+    "hi": 39.100149875,
+    "epochs": 99,
+    "note": "three epochs on 33 candidates"
+   },
+   "ref_surrogate_only": {
+    "acc": 45.0557825,
+    "lo": 44.9462110625,
+    "hi": 45.160955375,
+    "epochs": 0,
+    "note": "surrogate alone, no training"
+   }
+  }
+ }
+}

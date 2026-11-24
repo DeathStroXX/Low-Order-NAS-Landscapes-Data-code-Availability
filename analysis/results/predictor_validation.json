@@ -1,0 +1,116 @@
+{
+ "bootstrap": {
+  "chunk": 500,
+  "method": "percentile, resampling architectures",
+  "resamples": 10000,
+  "seed": 0
+ },
+ "columns": {
+  "predictor": "pred",
+  "proxy": "acc1",
+  "reference": "acc3"
+ },
+ "datasets": {
+  "cifar10": {
+   "high_band": {
+    "gap": 11.63185318241824,
+    "mean_reference": 67.62479591836734,
+    "n": 196,
+    "population_mean": 55.9929427359491,
+    "threshold": 90.0
+   },
+   "kendall": {
+    "ci95": [
+     0.40159912664978775,
+     0.43617152247366964
+    ],
+    "se": 0.00884842844964881,
+    "tau": 0.4192135538158545
+   },
+   "n_rows_dataset": 3772,
+   "n_scored": 3772,
+   "n_without_predictor": 0,
+   "pipelines_scored": [
+    "baseline",
+    "deepseek",
+    "mistral",
+    "qwen"
+   ],
+   "pipelines_without_predictor": [],
+   "predictor_minus_proxy": {
+    "ci95": [
+     -0.37627357089924834,
+     -0.3320184015008438
+    ],
+    "delta_rho": -0.35365499951196944
+   },
+   "proxy_1epoch": {
+    "ci95": [
+     0.9344817220503364,
+     0.9427655872960832
+    ],
+    "rho": 0.9387854774622054
+   },
+   "spearman": {
+    "ci95": [
+     0.5623840379800548,
+     0.6067216932899474
+    ],
+    "rho": 0.585130477950236,
+    "se": 0.01137325439913062
+   }
+  },
+  "cifar100": {
+   "high_band": {
+    "gap": 1.555134995065698,
+    "mean_reference": 17.00618556701031,
+    "n": 97,
+    "population_mean": 15.451050571944611,
+    "threshold": 90.0
+   },
+   "kendall": {
+    "ci95": [
+     0.19620901620326245,
+     0.23927849220202432
+    ],
+    "se": 0.011044023867332149,
+    "tau": 0.21752491147792088
+   },
+   "n_rows_dataset": 3322,
+   "n_scored": 3322,
+   "n_without_predictor": 0,
+   "pipelines_scored": [
+    "baseline",
+    "deepseek",
+    "mistral",
+    "qwen"
+   ],
+   "pipelines_without_predictor": [],
+   "predictor_minus_proxy": {
+    "ci95": [
+     -0.6013216875874172,
+     -0.5388087881036652
+    ],
+    "delta_rho": -0.5706517754320879
+   },
+   "proxy_1epoch": {
+    "ci95": [
+     0.8808247997836394,
+     0.897195193846287
+    ],
+    "rho": 0.8893070906732573
+   },
+   "spearman": {
+    "ci95": [
+     0.2874189965883481,
+     0.3500047973217408
+    ],
+    "rho": 0.31865531524116947,
+    "se": 0.015998653668716726
+   }
+  }
+ },
+ "n_rows": 7094,
+ "selection": "baseline and LLM-arm rows of the given dataset whose pred is not empty",
+ "source": "data/gene_diversity_benchmark.csv"
+}

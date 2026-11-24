@@ -1,0 +1,94 @@
+{
+ "by_config": {
+  "baseline/cifar10": {
+   "runs": 3,
+   "attempted": 945,
+   "recorded": 881,
+   "attempted_per_run": 315.0,
+   "recorded_per_run": 293.6666666666667,
+   "rate": 0.06772486772486773
+  },
+  "frozen/cifar10": {
+   "runs": 5,
+   "attempted": 1841,
+   "recorded": 1547,
+   "attempted_per_run": 368.2,
+   "recorded_per_run": 309.4,
+   "rate": 0.1596958174904943
+  },
+  "qwen/cifar10": {
+   "runs": 3,
+   "attempted": 1146,
+   "recorded": 1014,
+   "attempted_per_run": 382.0,
+   "recorded_per_run": 338.0,
+   "rate": 0.11518324607329843
+  },
+  "deepseek/cifar10": {
+   "runs": 3,
+   "attempted": 1046,
+   "recorded": 910,
+   "attempted_per_run": 348.6666666666667,
+   "recorded_per_run": 303.3333333333333,
+   "rate": 0.13001912045889102
+  },
+  "mistral/cifar10": {
+   "runs": 3,
+   "attempted": 1125,
+   "recorded": 967,
+   "attempted_per_run": 375.0,
+   "recorded_per_run": 322.3333333333333,
+   "rate": 0.14044444444444446
+  },
+  "baseline/cifar100": {
+   "runs": 3,
+   "attempted": 979,
+   "recorded": 776,
+   "attempted_per_run": 326.3333333333333,
+   "recorded_per_run": 258.6666666666667,
+   "rate": 0.20735444330949948
+  },
+  "frozen/cifar100": {
+   "runs": 5,
+   "attempted": 1854,
+   "recorded": 1441,
+   "attempted_per_run": 370.8,
+   "recorded_per_run": 288.2,
+   "rate": 0.22276159654800431
+  },
+  "qwen/cifar100": {
+   "runs": 3,
+   "attempted": 1104,
+   "recorded": 847,
+   "attempted_per_run": 368.0,
+   "recorded_per_run": 282.3333333333333,
+   "rate": 0.23278985507246377
+  },
+  "deepseek/cifar100": {
+   "runs": 3,
+   "attempted": 1044,
+   "recorded": 782,
+   "attempted_per_run": 348.0,
+   "recorded_per_run": 260.6666666666667,
+   "rate": 0.2509578544061303
+  },
+  "mistral/cifar100": {
+   "runs": 3,
+   "attempted": 1231,
+   "recorded": 917,
+   "attempted_per_run": 410.3333333333333,
+   "recorded_per_run": 305.6666666666667,
+   "rate": 0.2550771730300569
+  }
+ },
+ "range": {
+  "cifar10": [
+   0.06772486772486773,
+   0.1596958174904943
+  ],
+  "cifar100": [
+   0.20735444330949948,
+   0.2550771730300569
+  ]
+ }
+}

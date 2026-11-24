@@ -1,0 +1,29 @@
+\begin{table}[t]
+\centering
+\caption{The same free ranker in two further spaces it was not designed for, against the zero-cost proxy family. Both spaces and all 13 proxy scores come from NAS-Bench-Suite-Zero~\cite{krishnakumar2022nasbenchsuitezero}; the surrogate is fitted on 1{,}000 labels and every ranker is scored on the same held-out pool over 20 splits. $r_{10}$ is the accuracy lost by training the ten best-ranked candidates instead of the whole pool. NAS-Bench-101 genotypes are mostly binary and NAS-Bench-301 has 28 varying genes in a $10^{18}$ space, so neither resembles the 13-gene grid the model was built for. NAS-Bench-301 accuracies are that benchmarks surrogate predictions, not measurements.}
+\label{tab:zc_spaces}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{l cc cc}
+\toprule
+& \multicolumn{2}{c}{NAS-Bench-101} & \multicolumn{2}{c}{NAS-Bench-301} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+Ranker & $\rho$ & $r_{10}$ & $\rho$ & $r_{10}$ \\
+\midrule
+\quad \textbf{Genotype surrogate, 1{,}000 labels} & 0.499 & 0.90 & 0.826 & 0.16 \\
+\quad Genotype surrogate, 100 labels & 0.485 & 0.64 & 0.556 & 0.36 \\
+\addlinespace[1pt]
+\quad SynFlow (zero-cost) & 0.327 & 1.49 & 0.176 & 0.86 \\
+\quad NWOT (zero-cost) & 0.311 & 0.53 & 0.472 & 0.99 \\
+\quad JacobCov (zero-cost) & 0.279 & 1.30 & 0.058 & 2.53 \\
+\quad Params (zero-cost) & 0.383 & 0.51 & 0.459 & 0.87 \\
+\quad FLOPs (zero-cost) & 0.378 & 0.54 & 0.421 & 0.71 \\
+\quad Rank-mean of all 13 proxies & 0.693 & 0.17 & 0.517 & 0.34 \\
+\addlinespace[1pt]
+\quad Surrogate $+$ best proxy (2:1) & 0.619 & 0.67 & 0.800 & 0.14 \\
+\quad Random shortlist & -0.003 & 1.33 & -0.000 & 0.87 \\
+\midrule
+Architectures / varying genes & \multicolumn{2}{c}{9{,}781 / 26} & \multicolumn{2}{c}{11{,}221 / 28} \\
+\bottomrule
+\end{tabular}
+\end{table}

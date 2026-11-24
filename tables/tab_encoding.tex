@@ -1,0 +1,26 @@
+\begin{table}[t]
+\centering
+\caption{The one space where the free ranker fails, and the diagnostic that anticipates it. Top: on NAS-Bench-101 the genotype encoding is an adjacency matrix, so what a cell computes depends on paths rather than on single edges; the ridge saturates and more labels do not help. Re-encoding the same architectures by their input-to-output paths---still a ridge, still no training---recovers the signal. Bottom: held-out $R^{2}$, from the same 1{,}000 labels, separates a model that is merely under-identified from one whose features cannot express the function at all, and costs nothing. A ranker with $R^{2} \le 0$ out of sample is worse than no ranker. The fidelity gain from 250 to 1{,}000 labels was tried as the diagnostic first and does not separate the cases; it is in \texttt{results/encoding.json}.}
+\label{tab:encoding}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lcccc}
+\toprule
+\multicolumn{5}{l}{\emph{NAS-Bench-101, 9{,}781 architectures, 8781 held out}} \\
+Encoding & $\rho$, 100 & $\rho$, 1{,}000 & $r_{10}$ & $k^{\star}$ \\
+\midrule
+\quad Genes and gene pairs (Sec.~III) & 0.485 & 0.499 & 0.90 & $>$500 \\
+\quad Input-to-output paths ($\leq$5 ops) & 0.586 & 0.692 & 0.40 & 100 \\
+\addlinespace[2pt]\midrule
+\multicolumn{5}{l}{\emph{The diagnostic, from the same 1{,}000 labels and no more}} \\
+Space and encoding & $R^{2}$ in & $R^{2}$ out & gap & verdict \\
+\midrule
+\quad NAS-Bench-101, genes & 0.538 & -0.103 & 0.641 & \textbf{do not rank} \\
+\quad NAS-Bench-101, paths & 0.230 & +0.120 & 0.110 & usable \\
+\quad NAS-Bench-201 (C10), genes & 0.739 & +0.576 & 0.162 & usable \\
+\quad NAS-Bench-201 (C100), genes & 0.818 & +0.705 & 0.114 & usable \\
+\quad NAS-Bench-201 (IN16), genes & 0.899 & +0.836 & 0.062 & usable \\
+\quad NAS-Bench-301, genes & 0.999 & +0.687 & 0.312 & usable \\
+\bottomrule
+\end{tabular}
+\end{table}

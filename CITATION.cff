@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this archive, please cite the paper and the archive."
+title: "Low-Order Structure in Neural Architecture Search Landscapes: code, data and logs"
+type: dataset
+authors:
+  - family-names: Ignatov
+    given-names: Dmitry
+    orcid: "https://orcid.org/0000-0002-6339-1200"
+  - family-names: Singh
+    given-names: Akashdeep
+    orcid: "https://orcid.org/0009-0008-7574-1002"
+  - family-names: Mulukuledu
+    given-names: Sai Revanth
+    orcid: "https://orcid.org/0009-0007-0933-126X"
+  - family-names: Timofte
+    given-names: Radu
+    orcid: "https://orcid.org/0000-0002-1478-0402"
+doi: "ZENODO-DOI-PLACEHOLDER"
+repository-code: "https://github.com/DeathStroXX/Low-Order-NAS-Landscapes-Data-code-Availability"
+license: [MIT, CC-BY-4.0]
+version: "1.0.0"
+date-released: "DATE-PLACEHOLDER"

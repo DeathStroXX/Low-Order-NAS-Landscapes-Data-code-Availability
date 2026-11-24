@@ -1,0 +1,170 @@
+{
+ "cifar10": {
+  "n_fit": 2612,
+  "n_pool": 2707,
+  "cells": {
+   "train_all": {
+    "acc": 80.59742,
+    "lo": 80.51820933333332,
+    "hi": 80.68012433333332,
+    "epochs": 100,
+    "note": ""
+   },
+   "prescreen_200": {
+    "acc": 81.44731666666667,
+    "lo": 81.37861766666667,
+    "hi": 81.51371575,
+    "epochs": 100,
+    "note": "surrogate scores 200"
+   },
+   "prescreen_400": {
+    "acc": 82.09546999999999,
+    "lo": 82.03989983333332,
+    "hi": 82.15196091666667,
+    "epochs": 100,
+    "note": "surrogate scores 400"
+   },
+   "prescreen_800": {
+    "acc": 82.68419,
+    "lo": 82.63129074999999,
+    "hi": 82.73472366666667,
+    "epochs": 100,
+    "note": "surrogate scores 800"
+   },
+   "prescreen_1600": {
+    "acc": 83.19080333333332,
+    "lo": 83.14634025,
+    "hi": 83.23460741666666,
+    "epochs": 100,
+    "note": "surrogate scores 1600"
+   },
+   "oracle3_equalcost": {
+    "acc": 80.00214,
+    "lo": 79.92312733333333,
+    "hi": 80.0749645,
+    "epochs": 99,
+    "note": ""
+   },
+   "oracle3_fullcost": {
+    "acc": 81.79442,
+    "lo": 81.74568066666667,
+    "hi": 81.84303233333333,
+    "epochs": 300,
+    "note": ""
+   },
+   "surrogate_only_100": {
+    "acc": 80.84471666666666,
+    "lo": 80.77042716666668,
+    "hi": 80.91713166666668,
+    "epochs": 0,
+    "note": "no training, 100 candidates"
+   },
+   "surrogate_only_800": {
+    "acc": 82.30481666666667,
+    "lo": 82.26621291666666,
+    "hi": 82.34380383333334,
+    "epochs": 0,
+    "note": "no training, 800 candidates"
+   },
+   "predictor_rescore": {
+    "acc": 66.02170666666666,
+    "lo": 65.54492991666667,
+    "hi": 66.5029385,
+    "epochs": 100,
+    "note": "selects on the predictor instead of the measured epoch"
+   },
+   "train_all_sub": {
+    "acc": 80.63354666666666,
+    "lo": 80.55393625,
+    "hi": 80.7056795,
+    "epochs": 100,
+    "note": "same candidate subset, selects on the measured epoch"
+   }
+  },
+  "surrogate_rho": 0.965044823103703
+ },
+ "cifar100": {
+  "n_fit": 2298,
+  "n_pool": 2465,
+  "cells": {
+   "train_all": {
+    "acc": 41.68384,
+    "lo": 41.51674825,
+    "hi": 41.85495433333333,
+    "epochs": 100,
+    "note": ""
+   },
+   "prescreen_200": {
+    "acc": 43.65589333333334,
+    "lo": 43.516565166666666,
+    "hi": 43.79460274999999,
+    "epochs": 100,
+    "note": "surrogate scores 200"
+   },
+   "prescreen_400": {
+    "acc": 45.014003333333335,
+    "lo": 44.910880250000005,
+    "hi": 45.1095815,
+    "epochs": 100,
+    "note": "surrogate scores 400"
+   },
+   "prescreen_800": {
+    "acc": 45.822886666666655,
+    "lo": 45.73175483333334,
+    "hi": 45.91160583333334,
+    "epochs": 100,
+    "note": "surrogate scores 800"
+   },
+   "prescreen_1600": {
+    "acc": 46.16392666666667,
+    "lo": 46.07129033333334,
+    "hi": 46.254778583333334,
+    "epochs": 100,
+    "note": "surrogate scores 1600"
+   },
+   "oracle3_equalcost": {
+    "acc": 38.78747333333333,
+    "lo": 38.59037241666667,
+    "hi": 38.97631433333334,
+    "epochs": 99,
+    "note": ""
+   },
+   "oracle3_fullcost": {
+    "acc": 43.25863666666667,
+    "lo": 43.14148241666666,
+    "hi": 43.383083750000004,
+    "epochs": 300,
+    "note": ""
+   },
+   "surrogate_only_100": {
+    "acc": 41.24627333333333,
+    "lo": 41.058818333333335,
+    "hi": 41.42588108333334,
+    "epochs": 0,
+    "note": "no training, 100 candidates"
+   },
+   "surrogate_only_800": {
+    "acc": 44.99631333333333,
+    "lo": 44.87117533333333,
+    "hi": 45.12627083333333,
+    "epochs": 0,
+    "note": "no training, 800 candidates"
+   },
+   "predictor_rescore": {
+    "acc": 14.708986666666666,
+    "lo": 14.379126916666666,
+    "hi": 15.034032916666668,
+    "epochs": 100,
+    "note": "selects on the predictor instead of the measured epoch"
+   },
+   "train_all_sub": {
+    "acc": 41.70817666666667,
+    "lo": 41.54144933333333,
+    "hi": 41.877713166666666,
+    "epochs": 100,
+    "note": "same candidate subset, selects on the measured epoch"
+   }
+  },
+  "surrogate_rho": 0.9314112329947125
+ }
+}

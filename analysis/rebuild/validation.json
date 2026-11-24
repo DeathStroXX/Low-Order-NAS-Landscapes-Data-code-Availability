@@ -1,0 +1,12 @@
+{
+  "jsonl_alignment": "All 34 run-level UID sets match across prediction, epoch-1 and epoch-3 JSONL files.",
+  "uid_uniqueness": "No repeated UID within any run-level evaluation JSONL.",
+  "chromosome_consistency": "All supplied inline chromosomes agree for each repeated full UID after excluding accuracy.",
+  "curve_endpoints": "All 10,082 recovered three-epoch curves agree with epoch-1 and epoch-3 JSONL accuracies within 0.011 percentage points.",
+  "independent_curve_parser": "All 30,246 epoch rows match the original s14 parser after repairing the pod-log path.",
+  "scripts": {
+    "s10_fitness_provenance.py.log": "written /workspace/scratch/4b280f3eb01e/work_rebuild/analysis/results/fitness.json\nwrote tab_fitness.tex\n",
+    "s11_proxy_fidelity.py.log": "written /workspace/scratch/4b280f3eb01e/work_rebuild/analysis/results/proxy.json\nwrote tab_proxy.tex\n",
+    "s14_learning_curves.py.log": "wrote /workspace/scratch/4b280f3eb01e/work_rebuild/analysis/../data/learning_curves.csv (30246 rows, 10082 architectures)\nwritten /workspace/scratch/4b280f3eb01e/work_rebuild/analysis/results/curves.json\nwrote tab_fidelity_curve.tex\n  cifar10: curves for 5319/5319 architectures (100.0%), 17/17 runs usable\n     1 epoch                        rho=0.931+-0.004 min=0.918 ret=57.6% hit3=76%\n     2 epochs                       rho=0.983+-0.002 min=0.978 ret=70.0% hit3=94%\n     2 epochs $+$ extrapolation     rho=0.958+-0.005 min=0.933 ret=37.1% hit3=24%\n     LLM accuracy predictor         rho=0.567+-0.021 min=0.488 ret=9.4% hit3=6%\n  cifar100: curves for 4763/4763 architectures (100.0%), 17/17 runs usable\n     1 epoch                        rho=0.896+-0.010 min=0.863 ret=70.6% hit3=76%\n     2 epochs                       rho=0.982+-0.002 min=0.974 ret=86.5% hit3=94%\n     2 epochs $+$ extrapolation     rho=0.979+-0.002 min=0.972 ret=81.2% hit3=94%\n     LLM accuracy predictor         rho=0.326+-0.050 min=0.110 ret=2.9% hit3=0%\n"
+  }
+}

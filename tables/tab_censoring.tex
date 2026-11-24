@@ -1,0 +1,23 @@
+\begin{center}\footnotesize
+\begin{tabular}{l rr r}
+\toprule
+\textbf{Configuration} & \textbf{Attempted/run} & \textbf{Recorded/run} & \textbf{Censored} \\
+\midrule
+\multicolumn{4}{c}{\textit{CIFAR-10}} \\
+\midrule
+Baseline GA & 315.0 & 293.7 & 6.8\% \\
+Restarts, frozen operators & 368.2 & 309.4 & 16.0\% \\
+Restarts, Qwen operators & 382.0 & 338.0 & 11.5\% \\
+Restarts, DeepSeek operators & 348.7 & 303.3 & 13.0\% \\
+Restarts, Mistral operators & 375.0 & 322.3 & 14.0\% \\
+\midrule
+\multicolumn{4}{c}{\textit{CIFAR-100}} \\
+\midrule
+Baseline GA & 326.3 & 258.7 & 20.7\% \\
+Restarts, frozen operators & 370.8 & 288.2 & 22.3\% \\
+Restarts, Qwen operators & 368.0 & 282.3 & 23.3\% \\
+Restarts, DeepSeek operators & 348.0 & 260.7 & 25.1\% \\
+Restarts, Mistral operators & 410.3 & 305.7 & 25.5\% \\
+\bottomrule
+\end{tabular}
+\end{center}

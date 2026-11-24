@@ -1,0 +1,41 @@
+\begin{table}[t]
+\centering
+\caption{Anatomy of the ranking signal. Top: rank fidelity of every signal the
+pipeline had available. Middle: the same fidelity restricted to the architectures
+selection actually compares late in a run. Bottom: what each signal knows that the
+genotype does not, measured as the correlation between its residual and the
+truth\'s, both residualized on the same out-of-fold genotype model.}
+\label{tab:signal}
+\footnotesize
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lcc}
+\toprule
+& CIFAR-10 & CIFAR-100 \\
+\midrule
+\multicolumn{3}{l}{\emph{Rank fidelity against the 3-epoch reference}} \\
+\quad Genotype surrogate (free) & \textbf{0.972} & \textbf{0.945} \\
+\quad One measured training epoch & 0.937 & 0.889 \\
+\quad LoRA-tuned 7B predictor (the fitness) & 0.580 & 0.333 \\
+\quad Surrogate $+$ epoch, rank-fused 2:1 & 0.978 & 0.962 \\
+\quad \dots\ $+$ the predictor & 0.964 & 0.934 \\
+\addlinespace[2pt]
+\midrule
+\multicolumn{3}{l}{\emph{Surrogate / one epoch, by selection regime}} \\
+\quad all ($n=5319$, $4763$) & 0.972 / 0.937 & 0.945 / 0.889 \\
+\quad top 50\% ($n=2660$, $2386$) & 0.909 / 0.809 & 0.894 / 0.700 \\
+\quad top 10\% ($n=532$, $477$) & 0.655 / 0.563 & 0.770 / 0.693 \\
+\quad top 5\% ($n=267$, $239$) & 0.616 / 0.501 & 0.637 / 0.630 \\
+\addlinespace[2pt]
+\midrule
+\multicolumn{3}{l}{\emph{Residual correlation with the truth, genotype removed}} \\
+\quad One measured training epoch & \textbf{+0.489} & \textbf{+0.622} \\
+\quad LoRA-tuned 7B predictor & +0.164 & +0.102 \\
+\addlinespace[2pt]
+\midrule
+\multicolumn{3}{l}{\emph{Identifiability of the pairwise model}} \\
+\quad Gene-pair cells covered & 1{,}514/1{,}514 & 1{,}514/1{,}514 \\
+\quad \dots\ from this share of the grid & 0.0105\% & 0.0094\% \\
+\quad $R^2$, additive only $\to$ with gene pairs & 0.757 $\to$ 0.934 & 0.669 $\to$ 0.891 \\
+\bottomrule
+\end{tabular}}
+\end{table}

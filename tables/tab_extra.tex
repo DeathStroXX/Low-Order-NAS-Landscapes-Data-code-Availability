@@ -1,0 +1,19 @@
+\begin{table}[!htb]
+\centering
+\caption{The exactness condition on a further complete factorial, recomputed by \texttt{analysis/s63\_extra\_grids.py} from a local copy of the benchmark, which is not redistributed with this archive (\texttt{data/external/PROVENANCE\_EXTRA.md}). Shares of accuracy variance by interaction order, in per cent, each against the analytic white-noise null of its own grid shape. Nothing is fitted: the design is verified to be the complete factorial claimed, covered exactly once, and decomposed by the same Moebius inversion as Tables~I and~II.}
+\label{tab:extra}
+\footnotesize
+\setlength{\tabcolsep}{3.0pt}
+\begin{tabular}{l rrrrr}
+\toprule
+\multicolumn{6}{l}{\emph{(a) NATS-Bench size search space, $8^{5}=32{,}768$ cells}} \\
+order & 1 & 2 & 3 & $\le 2$ & $\le 3$ \\
+\midrule
+CIFAR-10 & 91.9 & 4.6 & 0.9 & \textbf{96.5} & \textbf{97.3} \\
+CIFAR-100 & 96.2 & 2.8 & 0.2 & \textbf{99.0} & \textbf{99.2} \\
+ImageNet16-120 & 97.1 & 1.0 & 0.3 & \textbf{98.1} & \textbf{98.4} \\
+white-noise null & 0.1 & 1.5 & 10.5 & 1.6 & 12.1 \\
+\multicolumn{6}{l}{\quad\footnotesize skewness/top-decile spread: CIFAR-10 $-1.28$/8.6\%, CIFAR-100 $-1.29$/7.9\%, ImageNet16-120 $-0.75$/15.0\%} \\
+\bottomrule
+\end{tabular}
+\end{table}

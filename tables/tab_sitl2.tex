@@ -1,0 +1,29 @@
+\begin{table}[t]
+\centering
+\caption{A free prior is what makes model-based search work. Top: a model-in-the-loop GA at an identical number of \emph{trained} architectures, the model refitted on what the loop measured; seeded with the surrogate fitted on the other dataset it starts at $\rho=0.86$. Bottom: the same idea applied only to the initial population, cold / warm, with the selection signal corrupted to the fidelity shown; bold is the pipeline's own predictor on that dataset. Differences are computed before rounding.}
+\label{tab:sitl}
+\footnotesize
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lcccccc}
+\toprule
+& \multicolumn{3}{c}{CIFAR-10} & \multicolumn{3}{c}{CIFAR-100} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}
+Trained architectures & 120 & 260 & 520 & 120 & 260 & 520 \\
+\midrule
+GA, every individual trained & 87.89 & 92.13 & 94.31 & 44.04 & 48.89 & 51.34 \\
+Model in the loop, from scratch & 81.25 & 83.46 & 81.88 & 36.37 & 37.04 & 37.03 \\
+\quad $+$ random exploration & 83.49 & 88.16 & 90.46 & 39.75 & 44.27 & 47.79 \\
+\quad $+$ transferred prior & 92.52 & 92.95 & 93.53 & 48.46 & 50.02 & 51.56 \\
+\midrule
+\textbf{Transferred prior $-$ GA} & \textbf{+4.62} & \textbf{+0.82} & \textbf{-0.79} & \textbf{+4.42} & \textbf{+1.13} & \textbf{+0.23} \\
+\addlinespace[3pt]\midrule
+\multicolumn{7}{l}{\emph{A free warm start, by the fidelity of the selection signal (cold / warm)}} \\
+\quad exact ($\rho=1$) & \multicolumn{3}{c}{91.71 / 93.06} & \multicolumn{3}{c}{48.42 / 51.32} \\
+\quad $\rho=0.93$ & \multicolumn{3}{c}{90.23 / 91.89} & \multicolumn{3}{c}{47.65 / 50.89} \\
+\quad $\rho=0.70$ & \multicolumn{3}{c}{88.34 / 91.26} & \multicolumn{3}{c}{45.97 / 50.63} \\
+\quad $\rho=0.58$ & \multicolumn{3}{c}{\textbf{87.60 / 91.10}} & \multicolumn{3}{c}{44.87 / 50.57} \\
+\quad $\rho=0.43$ & \multicolumn{3}{c}{86.64 / 91.02} & \multicolumn{3}{c}{43.59 / 50.55} \\
+\quad $\rho=0.33$ & \multicolumn{3}{c}{85.97 / 90.93} & \multicolumn{3}{c}{\textbf{42.51 / 50.53}} \\
+\bottomrule
+\end{tabular}}
+\end{table}

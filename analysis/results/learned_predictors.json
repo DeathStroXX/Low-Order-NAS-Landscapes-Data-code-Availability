@@ -1,0 +1,557 @@
+{
+ "budgets": [
+  100,
+  1000
+ ],
+ "checks": {
+  "nothing_fitted_beats_the_exact_reference": true,
+  "recalibration_helps_every_arm_on_average": true,
+  "ridge_leads_everything_at_the_smallest_budget": false,
+  "ridge_matches_s53": true,
+  "ridge_vs_s53_worst_abs_rho_gap": 0.0
+ },
+ "datasets": [
+  "cifar10",
+  "cifar100",
+  "ImageNet16-120"
+ ],
+ "findings": {
+  "cells_where_a_learned_predictor_leads_the_ridge": [
+   {
+    "budget": 100,
+    "dataset": "cifar10",
+    "predictor": "mlp_path",
+    "rho": 0.8342108741667902,
+    "ridge_rho": 0.7954666995717937
+   },
+   {
+    "budget": 1000,
+    "dataset": "cifar10",
+    "predictor": "gbdt",
+    "rho": 0.9458850295949703,
+    "ridge_rho": 0.9347519990266262
+   },
+   {
+    "budget": 100,
+    "dataset": "cifar100",
+    "predictor": "mlp_path",
+    "rho": 0.8136254244349568,
+    "ridge_rho": 0.7823430618681448
+   },
+   {
+    "budget": 1000,
+    "dataset": "cifar100",
+    "predictor": "gbdt",
+    "rho": 0.9392397171855196,
+    "ridge_rho": 0.926077885134496
+   },
+   {
+    "budget": 100,
+    "dataset": "ImageNet16-120",
+    "predictor": "mlp_path",
+    "rho": 0.7966577641066914,
+    "ridge_rho": 0.7781982083695146
+   },
+   {
+    "budget": 1000,
+    "dataset": "ImageNet16-120",
+    "predictor": "gbdt",
+    "rho": 0.9380519567070402,
+    "ridge_rho": 0.9228476607903049
+   }
+  ],
+  "cells_where_anything_fitted_beats_the_exact_degree2_reference": [],
+  "recalibration_gain_rho": {
+   "gbdt": {
+    "mean": 0.0649233035848371,
+    "min": 0.005777067260383628,
+    "n_cells": 6,
+    "n_cells_positive": 6
+   },
+   "mlp_path": {
+    "mean": 0.16932457042000768,
+    "min": -0.002086467147636828,
+    "n_cells": 6,
+    "n_cells_positive": 5
+   },
+   "rf": {
+    "mean": 0.03210040377887378,
+    "min": -0.00289167808120927,
+    "n_cells": 6,
+    "n_cells_positive": 5
+   },
+   "ridge2": {
+    "mean": 0.12207604281250974,
+    "min": 0.018901905574083,
+    "n_cells": 6,
+    "n_cells_positive": 6
+   }
+  },
+  "ridge_leads_every_learned_predictor_at": []
+ },
+ "n_arch": 15625,
+ "n_features": {
+  "degree2": 265,
+  "onehot": 30,
+  "path": 70
+ },
+ "n_paths_vocab": 70,
+ "protocol": {
+  "evaluation": "the complement of the fitted sample, all 15625 - n architectures",
+  "index_draw": "numpy.random.default_rng(5000 + s) then rng.choice(15625, n, replace=False) for s = 0..19",
+  "metrics": "Spearman rho against the held-out truth, and the accuracy given up by the top-10 shortlist",
+  "scales": {
+   "raw": "fitted on the target accuracies",
+   "recal": "fitted on the ranks of the same accuracies, the monotone recalibration of Section V"
+  },
+  "seeds": 20,
+  "shared_with": "s53_spectrum.py (the recalibration block); the ridge row here is the same number that file reports, which is what makes the comparison a head-to-head rather than two protocols side by side",
+  "tuning": "library defaults but for tree count, boosting rounds and MLP iterations; nothing tuned per dataset, per budget, or against the held-out complement",
+  "why_not_quoted": "published values for these predictors are reported at other budgets, over other train/test pools, against other accuracy columns, and some are Kendall tau; refitting is the only way to put them on this paper's axes"
+ },
+ "reference": {
+  "per_dataset": {
+   "ImageNet16-120": {
+    "regret10": 0.0,
+    "rho": 0.9463553214802145
+   },
+   "cifar10": {
+    "regret10": 0.0,
+    "rho": 0.9555928826312315
+   },
+   "cifar100": {
+    "regret10": 0.0,
+    "rho": 0.950822780957044
+   }
+  },
+  "what": "the exact degree-2 projection of the recalibrated response, computed from the table with nothing fitted; the same reference as s64_realization.py"
+ },
+ "results": {
+  "ImageNet16-120": {
+   "100": {
+    "gbdt": {
+     "raw": {
+      "realization_rho": 63.265176258518956,
+      "regret10": 1.363999999999999,
+      "regret10_sd": 0.7712807530335498,
+      "rho": 0.5987133621663314,
+      "rho_sd": 0.09402252012675735
+     },
+     "recal": {
+      "realization_rho": 65.1954670590305,
+      "regret10": 1.3434999999999988,
+      "regret10_sd": 0.7851768908978408,
+      "rho": 0.6169807718770155,
+      "rho_sd": 0.0930004687675702
+     },
+     "recal_gain_rho": 0.01826740971068408
+    },
+    "mlp_path": {
+     "raw": {
+      "realization_rho": 79.24764573944928,
+      "regret10": 1.756999999999998,
+      "regret10_sd": 0.8776793264057211,
+      "rho": 0.7499643126030668,
+      "rho_sd": 0.02715471263415851
+     },
+     "recal": {
+      "realization_rho": 84.181675320494,
+      "regret10": 1.6044999999999976,
+      "regret10_sd": 0.6194632757476423,
+      "rho": 0.7966577641066914,
+      "rho_sd": 0.026522806534374638
+     },
+     "recal_gain_rho": 0.04669345150362458
+    },
+    "rf": {
+     "raw": {
+      "realization_rho": 75.18964954529848,
+      "regret10": 0.6324999999999985,
+      "regret10_sd": 0.4694558019664901,
+      "rho": 0.7115612496742562,
+      "rho_sd": 0.03239853370920667
+     },
+     "recal": {
+      "realization_rho": 75.60632755260478,
+      "regret10": 0.7379999999999984,
+      "regret10_sd": 0.5032852074122586,
+      "rho": 0.7155045041698369,
+      "rho_sd": 0.027949855028463963
+     },
+     "recal_gain_rho": 0.00394325449558075
+    },
+    "ridge2": {
+     "raw": {
+      "realization_rho": 80.117991985854,
+      "regret10": 1.0989999999999984,
+      "regret10_sd": 0.6248031690060474,
+      "rho": 0.7582008806212212,
+      "rho_sd": 0.025545955316032272
+     },
+     "recal": {
+      "realization_rho": 82.23108072687944,
+      "regret10": 0.8359999999999989,
+      "regret10_sd": 0.5476440449781226,
+      "rho": 0.7781982083695146,
+      "rho_sd": 0.021790465948636834
+     },
+     "recal_gain_rho": 0.019997327748293436
+    }
+   },
+   "1000": {
+    "gbdt": {
+     "raw": {
+      "realization_rho": 98.5121410833793,
+      "regret10": 1.0439999999999987,
+      "regret10_sd": 0.9166646060582908,
+      "rho": 0.9322748894466566,
+      "rho_sd": 0.004724467162929401
+     },
+     "recal": {
+      "realization_rho": 99.12259543696686,
+      "regret10": 0.28849999999999804,
+      "regret10_sd": 0.33759850414360487,
+      "rho": 0.9380519567070402,
+      "rho_sd": 0.003114199378856912
+     },
+     "recal_gain_rho": 0.005777067260383628
+    },
+    "mlp_path": {
+     "raw": {
+      "realization_rho": 94.74339099144183,
+      "regret10": 0.581499999999999,
+      "regret10_sd": 0.5002426911010296,
+      "rho": 0.8966091223983159,
+      "rho_sd": 0.0071977922574432245
+     },
+     "recal": {
+      "realization_rho": 94.52291702143516,
+      "regret10": 1.5164999999999993,
+      "regret10_sd": 0.7159558296431425,
+      "rho": 0.8945226552506791,
+      "rho_sd": 0.008794330465899409
+     },
+     "recal_gain_rho": -0.002086467147636828
+    },
+    "rf": {
+     "raw": {
+      "realization_rho": 93.87688252183258,
+      "regret10": 0.3234999999999985,
+      "regret10_sd": 0.33873699237018756,
+      "rho": 0.888408873385092,
+      "rho_sd": 0.01032617449241777
+     },
+     "recal": {
+      "realization_rho": 94.51784884606954,
+      "regret10": 0.3969999999999988,
+      "regret10_sd": 0.4345583965360699,
+      "rho": 0.8944746923034046,
+      "rho_sd": 0.00952984609955339
+     },
+     "recal_gain_rho": 0.006065818918312593
+    },
+    "ridge2": {
+     "raw": {
+      "realization_rho": 95.51864238501254,
+      "regret10": 1.365499999999999,
+      "regret10_sd": 1.1785731839813762,
+      "rho": 0.9039457552162219,
+      "rho_sd": 0.0033322925960303047
+     },
+     "recal": {
+      "realization_rho": 97.5159794470072,
+      "regret10": 0.37449999999999867,
+      "regret10_sd": 0.3173243608675514,
+      "rho": 0.9228476607903049,
+      "rho_sd": 0.00217081728662413
+     },
+     "recal_gain_rho": 0.018901905574083
+    }
+   }
+  },
+  "cifar10": {
+   "100": {
+    "gbdt": {
+     "raw": {
+      "realization_rho": 49.61739945245666,
+      "regret10": 0.8705000000000069,
+      "regret10_sd": 0.26158124932800714,
+      "rho": 0.47414033771438346,
+      "rho_sd": 0.1320169539408845
+     },
+     "recal": {
+      "realization_rho": 66.5698546543476,
+      "regret10": 0.706000000000006,
+      "regret10_sd": 0.3409310780788418,
+      "rho": 0.6361367930549012,
+      "rho_sd": 0.09754391771863669
+     },
+     "recal_gain_rho": 0.16199645534051776
+    },
+    "mlp_path": {
+     "raw": {
+      "realization_rho": 43.81136976624881,
+      "regret10": 1.2535000000000067,
+      "regret10_sd": 0.5575506703430634,
+      "rho": 0.4186583312695249,
+      "rho_sd": 0.0485078136151588
+     },
+     "recal": {
+      "realization_rho": 87.29772786396073,
+      "regret10": 0.7905000000000058,
+      "regret10_sd": 0.33780874766648755,
+      "rho": 0.8342108741667902,
+      "rho_sd": 0.020874977261397774
+     },
+     "recal_gain_rho": 0.4155525428972653
+    },
+    "rf": {
+     "raw": {
+      "realization_rho": 65.88318142768988,
+      "regret10": 0.33800000000000663,
+      "regret10_sd": 0.3026813505982837,
+      "rho": 0.6295749925740258,
+      "rho_sd": 0.038406864462202706
+     },
+     "recal": {
+      "realization_rho": 77.92391286394715,
+      "regret10": 0.32850000000000606,
+      "regret10_sd": 0.2708555888291781,
+      "rho": 0.7446353651956416,
+      "rho_sd": 0.028939446705560253
+     },
+     "recal_gain_rho": 0.11506037262161573
+    },
+    "ridge2": {
+     "raw": {
+      "realization_rho": 59.53542586679873,
+      "regret10": 1.1995000000000053,
+      "regret10_sd": 0.4404483511150866,
+      "rho": 0.5689162922273219,
+      "rho_sd": 0.09104518722925221
+     },
+     "recal": {
+      "realization_rho": 83.2432633216638,
+      "regret10": 0.36050000000000537,
+      "regret10_sd": 0.3213950061839821,
+      "rho": 0.7954666995717937,
+      "rho_sd": 0.018590291233699346
+     },
+     "recal_gain_rho": 0.22655040734447185
+    }
+   },
+   "1000": {
+    "gbdt": {
+     "raw": {
+      "realization_rho": 89.58165077145716,
+      "regret10": 1.141500000000007,
+      "regret10_sd": 0.36547605940745337,
+      "rho": 0.8560358789156103,
+      "rho_sd": 0.01659309823336429
+     },
+     "recal": {
+      "realization_rho": 98.98410157581641,
+      "regret10": 0.08350000000000221,
+      "regret10_sd": 0.12386585485920087,
+      "rho": 0.9458850295949703,
+      "rho_sd": 0.0022741633627244386
+     },
+     "recal_gain_rho": 0.08984915067936006
+    },
+    "mlp_path": {
+     "raw": {
+      "realization_rho": 73.110627329609,
+      "regret10": 1.3685000000000067,
+      "regret10_sd": 0.5432244011456051,
+      "rho": 0.6986399512087876,
+      "rho_sd": 0.031627491218132034
+     },
+     "recal": {
+      "realization_rho": 96.17180119260412,
+      "regret10": 0.7610000000000057,
+      "regret10_sd": 0.32477530694312534,
+      "rho": 0.9190108872947829,
+      "rho_sd": 0.004380802245289632
+     },
+     "recal_gain_rho": 0.22037093608599523
+    },
+    "rf": {
+     "raw": {
+      "realization_rho": 91.79260065959006,
+      "regret10": 0.09050000000000509,
+      "regret10_sd": 0.10146304746064505,
+      "rho": 0.8771635586851515,
+      "rho_sd": 0.012370071588230008
+     },
+     "recal": {
+      "realization_rho": 93.96222580692636,
+      "regret10": 0.1165000000000056,
+      "regret10_sd": 0.1091913458109248,
+      "rho": 0.8978963421728746,
+      "rho_sd": 0.005199982949309585
+     },
+     "recal_gain_rho": 0.020732783487723117
+    },
+    "ridge2": {
+     "raw": {
+      "realization_rho": 71.37662316194954,
+      "regret10": 1.3195000000000079,
+      "regret10_sd": 0.3648763489183693,
+      "rho": 0.6820699307981049,
+      "rho_sd": 0.019084040530746978
+     },
+     "recal": {
+      "realization_rho": 97.8190624916314,
+      "regret10": 0.05150000000000219,
+      "regret10_sd": 0.090624224134613,
+      "rho": 0.9347519990266262,
+      "rho_sd": 0.0016589317623710517
+     },
+     "recal_gain_rho": 0.25268206822852135
+    }
+   }
+  },
+  "cifar100": {
+   "100": {
+    "gbdt": {
+     "raw": {
+      "realization_rho": 58.08078215858871,
+      "regret10": 1.4020000000000046,
+      "regret10_sd": 0.7159860333833326,
+      "rho": 0.5522453081218959,
+      "rho_sd": 0.10257780021292084
+     },
+     "recal": {
+      "realization_rho": 66.21338262487917,
+      "regret10": 1.2600000000000022,
+      "regret10_sd": 0.7628368108579976,
+      "rho": 0.6295719260396043,
+      "rho_sd": 0.08847816425664143
+     },
+     "recal_gain_rho": 0.07732661791770845
+    },
+    "mlp_path": {
+     "raw": {
+      "realization_rho": 60.46622810735806,
+      "regret10": 2.415000000000004,
+      "regret10_sd": 0.8667381380786253,
+      "rho": 0.5749266716302117,
+      "rho_sd": 0.051249143877859914
+     },
+     "recal": {
+      "realization_rho": 85.57067002706938,
+      "regret10": 1.372000000000004,
+      "regret10_sd": 0.913025738958109,
+      "rho": 0.8136254244349568,
+      "rho_sd": 0.025096680647899525
+     },
+     "recal_gain_rho": 0.23869875280474506
+    },
+    "rf": {
+     "raw": {
+      "realization_rho": 70.75016622758528,
+      "regret10": 0.38400000000000245,
+      "regret10_sd": 0.5929451913963049,
+      "rho": 0.6727086980568577,
+      "rho_sd": 0.031692236813084085
+     },
+     "recal": {
+      "realization_rho": 75.97636318315283,
+      "regret10": 0.5610000000000028,
+      "regret10_sd": 0.6609228396719244,
+      "rho": 0.7224005692880775,
+      "rho_sd": 0.029511778021913217
+     },
+     "recal_gain_rho": 0.049691871231219764
+    },
+    "ridge2": {
+     "raw": {
+      "realization_rho": 70.56392682522983,
+      "regret10": 1.8940000000000032,
+      "regret10_sd": 1.016289328882282,
+      "rho": 0.6709378913921438,
+      "rho_sd": 0.0529968909363875
+     },
+     "recal": {
+      "realization_rho": 82.28063920394112,
+      "regret10": 0.46700000000000585,
+      "regret10_sd": 0.5487540432652861,
+      "rho": 0.7823430618681448,
+      "rho_sd": 0.021390820482657006
+     },
+     "recal_gain_rho": 0.11140517047600107
+    }
+   },
+   "1000": {
+    "gbdt": {
+     "raw": {
+      "realization_rho": 94.96160742765615,
+      "regret10": 1.782000000000005,
+      "regret10_sd": 1.2596650348406104,
+      "rho": 0.902916596585151,
+      "rho_sd": 0.009501283869917087
+     },
+     "recal": {
+      "realization_rho": 98.78178520713759,
+      "regret10": 0.1060000000000052,
+      "regret10_sd": 0.18078716768620526,
+      "rho": 0.9392397171855196,
+      "rho_sd": 0.002111307852436686
+     },
+     "recal_gain_rho": 0.036323120600368575
+    },
+    "mlp_path": {
+     "raw": {
+      "realization_rho": 85.63399435479623,
+      "regret10": 1.5520000000000045,
+      "regret10_sd": 0.9478269884319618,
+      "rho": 0.8142275265688715,
+      "rho_sd": 0.01955100535061647
+     },
+     "recal": {
+      "realization_rho": 95.80604831828053,
+      "regret10": 1.4970000000000048,
+      "regret10_sd": 0.8059348608913747,
+      "rho": 0.9109457329449242,
+      "rho_sd": 0.004476634424300956
+     },
+     "recal_gain_rho": 0.09671820637605266
+    },
+    "rf": {
+     "raw": {
+      "realization_rho": 93.40412471491238,
+      "regret10": 0.052000000000003155,
+      "regret10_sd": 0.03370459909270194,
+      "rho": 0.8881076961429155,
+      "rho_sd": 0.012205016077581135
+     },
+     "recal": {
+      "realization_rho": 93.10000094557034,
+      "regret10": 0.06200000000000401,
+      "regret10_sd": 0.05688585061331017,
+      "rho": 0.8852160180617062,
+      "rho_sd": 0.007297044236063819
+     },
+     "recal_gain_rho": -0.00289167808120927
+    },
+    "ridge2": {
+     "raw": {
+      "realization_rho": 86.5732841194932,
+      "regret10": 3.2370000000000045,
+      "regret10_sd": 0.5324762905519812,
+      "rho": 0.8231585076308082,
+      "rho_sd": 0.0117811795745129
+     },
+     "recal": {
+      "realization_rho": 97.39752808639679,
+      "regret10": 0.026000000000002643,
+      "regret10_sd": 0.048620983124572754,
+      "rho": 0.926077885134496,
+      "rho_sd": 0.0020956949626508977
+     },
+     "recal_gain_rho": 0.10291937750368774
+    }
+   }
+  }
+ }
+}

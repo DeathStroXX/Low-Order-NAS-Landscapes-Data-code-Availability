@@ -1,0 +1,43 @@
+\begin{table}[t]
+\centering
+\caption{All 13 zero-cost proxies of NAS-Bench-Suite-Zero~\cite{krishnakumar2022nasbenchsuitezero} against the genotype surrogate, on the same 20 held-out pools of 14625 NAS-Bench-201 architectures. $\rho$ and Kendall $\tau$ are against final test accuracy; $r_k$ is regret at a shortlist of $k$ in accuracy points; $k^{\star}$ is the smallest shortlist in $\{1,5,10,20,50,100,200,500\}$ whose mean regret is at most $0.1$ points. \emph{sec/arch} is the measurement time the benchmark records, averaged over the table, and \emph{pool} is what screening the 14625 held-out architectures with that proxy would cost. Proxy signs are fixed once on CIFAR-10 and listed in \texttt{results/zc\_nb201.json}.}
+\label{tab:zc_sm}
+\footnotesize
+\setlength{\tabcolsep}{3.5pt}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{l rrrr rrrr rrrr r}
+\toprule
+& \multicolumn{4}{c}{CIFAR-10} & \multicolumn{4}{c}{CIFAR-100} & \multicolumn{4}{c}{ImageNet16-120} & \\
+\cmidrule(lr){2-5}\cmidrule(lr){6-9}\cmidrule(lr){10-13}
+Ranker & $\rho$ & $\tau$ & $r_{10}$ & $k^{\star}$ & $\rho$ & $\tau$ & $r_{10}$ & $k^{\star}$ & $\rho$ & $\tau$ & $r_{10}$ & $k^{\star}$ & sec/arch \\
+\midrule
+\quad NWOT & 0.792 & 0.605 & 1.05 & 500 & 0.805 & 0.618 & 1.24 & 500 & 0.780 & 0.597 & 1.18 & 500 & 0.81 \\
+\quad SynFlow & 0.776 & 0.579 & 0.21 & 200 & 0.762 & 0.567 & 0.08 & 5 & 0.751 & 0.560 & 0.89 & 200 & 0.64 \\
+\quad Params & 0.750 & 0.575 & 0.80 & 100 & 0.725 & 0.550 & 1.59 & 50 & 0.691 & 0.519 & 1.48 & 100 & 0.36 \\
+\quad FLOPs & 0.730 & 0.538 & 0.91 & 200 & 0.705 & 0.514 & 1.82 & 50 & 0.672 & 0.486 & 1.59 & 200 & 0.36 \\
+\quad JacobCov & 0.715 & 0.545 & 1.02 & $>$500 & 0.716 & 0.549 & 0.64 & 500 & 0.719 & 0.547 & 3.20 & $>$500 & 1.03 \\
+\quad $\ell_2$ norm & 0.698 & 0.507 & 0.89 & 200 & 0.713 & 0.519 & 1.31 & 200 & 0.691 & 0.502 & 0.53 & 100 & 0.18 \\
+\quad EPE-NAS & 0.679 & 0.502 & 1.11 & $>$500 & 0.608 & 0.436 & 4.26 & $>$500 & 0.335 & 0.229 & 2.67 & $>$500 & 1.03 \\
+\quad SNIP & 0.639 & 0.471 & 3.18 & $>$500 & 0.635 & 0.473 & 8.16 & $>$500 & 0.578 & 0.432 & 11.63 & $>$500 & 1.03 \\
+\quad GradNorm & 0.634 & 0.468 & 2.88 & $>$500 & 0.636 & 0.471 & 8.16 & $>$500 & 0.578 & 0.430 & 14.47 & $>$500 & 1.03 \\
+\quad GraSP & 0.559 & 0.389 & 2.87 & $>$500 & 0.545 & 0.385 & 6.62 & $>$500 & 0.548 & 0.391 & 11.69 & $>$500 & 3.13 \\
+\quad Fisher & 0.550 & 0.403 & 2.70 & $>$500 & 0.547 & 0.404 & 8.26 & $>$500 & 0.489 & 0.365 & 14.32 & $>$500 & 1.07 \\
+\quad Zen & 0.387 & 0.297 & 3.98 & $>$500 & 0.362 & 0.282 & 4.15 & 500 & 0.401 & 0.295 & 6.58 & $>$500 & 0.81 \\
+\quad Plain & 0.242 & 0.165 & 1.20 & $>$500 & 0.229 & 0.156 & 3.75 & $>$500 & 0.223 & 0.153 & 3.52 & $>$500 & 1.02 \\
+\addlinespace[2pt]\midrule
+\quad Rank-mean, all 13 & 0.847 & 0.658 & 0.91 & $>$500 & 0.838 & 0.649 & 1.85 & $>$500 & 0.794 & 0.612 & 1.11 & $>$500 & 12.50 \\
+\quad Rank-mean, best 3 & 0.846 & 0.653 & 0.89 & 100 & 0.837 & 0.643 & 1.24 & 100 & 0.854 & 0.686 & 1.68 & 500 & 1.82 \\
+\addlinespace[2pt]\midrule
+\quad Genotype surrogate, 100 labels & 0.615 & 0.441 & 0.89 & $>$500 & 0.713 & 0.522 & 1.52 & 500 & 0.766 & 0.573 & 1.05 & 500 & 0.00 \\
+\quad Genotype surrogate, 250 labels & 0.688 & 0.501 & 0.95 & $>$500 & 0.800 & 0.606 & 1.22 & 200 & 0.846 & 0.658 & 0.96 & 500 & 0.00 \\
+\quad Genotype surrogate, 500 labels & 0.718 & 0.526 & 1.17 & $>$500 & 0.839 & 0.648 & 1.81 & 500 & 0.887 & 0.710 & 0.74 & 200 & 0.00 \\
+\quad Genotype surrogate, 1000 labels & 0.737 & 0.544 & 1.25 & $>$500 & 0.856 & 0.670 & 2.75 & 500 & 0.910 & 0.744 & 0.48 & 100 & 0.00 \\
+\quad Surrogate fitted on C10, no target label & --- & --- & --- & --- & 0.748 & 0.551 & 3.19 & $>$500 & 0.742 & 0.549 & 3.49 & $>$500 & 1.6e-06 \\
+\quad Surrogate fitted on C100, no target label & 0.843 & 0.656 & 1.17 & $>$500 & --- & --- & --- & --- & 0.842 & 0.655 & 3.16 & $>$500 & 1.6e-06 \\
+\quad Surrogate fitted on IN16, no target label & 0.887 & 0.711 & 0.21 & 50 & 0.892 & 0.714 & 0.12 & 20 & --- & --- & --- & --- & 1.6e-06 \\
+\quad Surrogate $+$ best proxy (2:1) & 0.813 & 0.624 & 1.24 & $>$500 & 0.882 & 0.704 & 1.18 & 100 & 0.905 & 0.737 & 0.79 & 50 & --- \\
+\quad Transferred surrogate $+$ best proxy (2:1) & 0.892 & 0.720 & 0.75 & 50 & 0.900 & 0.727 & 1.19 & 50 & 0.863 & 0.683 & 1.23 & 200 & --- \\
+\quad Random shortlist & 0.002 & 0.001 & 1.63 & $>$500 & 0.002 & 0.001 & 3.77 & $>$500 & 0.002 & 0.001 & 4.25 & $>$500 & 0.00 \\
+\bottomrule
+\end{tabular}}
+\end{table}

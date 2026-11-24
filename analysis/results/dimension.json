@@ -1,0 +1,128 @@
+{
+ "checks": {
+  "dimension_below_indicator_count": true,
+  "full_degree_dimension_is_the_grid": true,
+  "macro_full_degree_dimension_is_the_grid": true
+ },
+ "checks_coverage": {
+  "every_pair_cell_covered": true,
+  "pair_cell_count_matches_s27": true
+ },
+ "coverage": {
+  "cifar10": {
+   "grid_fraction": 0.00010473934220679013,
+   "labels_per_cell": 3.5132100396301187,
+   "pair_cells": 1514,
+   "pair_cells_seen": 1514
+  },
+  "cifar100": {
+   "grid_fraction": 9.369555814766589e-05,
+   "labels_per_cell": 3.145970937912814,
+   "pair_cells": 1514,
+   "pair_cells_seen": 1514
+  }
+ },
+ "formula": "dim G_d = sum_{|S|<=d} prod_{a in S} (q_a - 1), the constant included",
+ "identifiability": "least squares determines a degree-2 model only if the design covers every pair cell; coverage, not count, is the condition",
+ "rows": {
+  "FractalNet record": {
+   "cardinalities": [
+    3,
+    3,
+    3,
+    8,
+    8,
+    8,
+    8,
+    4,
+    4,
+    2,
+    2,
+    2,
+    3
+   ],
+   "dim": {
+    "1": 46,
+    "10": 33981704,
+    "11": 39964800,
+    "12": 42121584,
+    "13": 42467328,
+    "2": 942,
+    "3": 11374,
+    "4": 90520,
+    "5": 503586,
+    "6": 2029994,
+    "7": 6077498,
+    "8": 13787799,
+    "9": 24221576
+   },
+   "dim_degree2": 942,
+   "grid_over_dim2": 45082.08917197452,
+   "grid_size": 42467328,
+   "grid_size_log10": 7.6280549364942924,
+   "indicator_features_degree2": 1572,
+   "n_factors": 13,
+   "name": "FractalNet record",
+   "note": "the 13 genes of the released per-architecture record",
+   "pair_cells": 1514
+  },
+  "NAS-Bench-201": {
+   "cardinalities": [
+    5,
+    5,
+    5,
+    5,
+    5,
+    5
+   ],
+   "dim": {
+    "1": 25,
+    "2": 265,
+    "3": 1545,
+    "4": 5385,
+    "5": 11529,
+    "6": 15625
+   },
+   "dim_degree2": 265,
+   "grid_over_dim2": 58.9622641509434,
+   "grid_size": 15625,
+   "grid_size_log10": 4.1938200260161125,
+   "indicator_features_degree2": 405,
+   "n_factors": 6,
+   "name": "NAS-Bench-201",
+   "note": "six edges, five operations each; the complete factorial Section IV decomposes",
+   "pair_cells": 375
+  },
+  "NAS-Bench-Macro": {
+   "cardinalities": [
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3
+   ],
+   "dim": {
+    "1": 17,
+    "2": 129,
+    "3": 577,
+    "4": 1697,
+    "5": 3489,
+    "6": 5281,
+    "7": 6305,
+    "8": 6561
+   },
+   "dim_degree2": 129,
+   "grid_over_dim2": 50.86046511627907,
+   "grid_size": 6561,
+   "grid_size_log10": 3.8169700377572995,
+   "indicator_features_degree2": 276,
+   "n_factors": 8,
+   "name": "NAS-Bench-Macro",
+   "note": "eight layers, three blocks each",
+   "pair_cells": 252
+  }
+ }
+}

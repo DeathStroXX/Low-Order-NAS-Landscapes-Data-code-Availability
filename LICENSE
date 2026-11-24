@@ -1,6 +1,24 @@
+Low-Order Structure in Neural Architecture Search Landscapes -- reproduction archive
+===================================================================================
+
+Two licences apply, depending on the file.
+
+1. Code -- MIT License: everything under analysis/ (the vendored zero-cost proxy
+   implementations in analysis/zerocost/ keep their own Apache-2.0 licence, see
+   analysis/zerocost/PROVENANCE.md), the Makefile and PROTECT.sh.
+
+2. Data, logs, results and documents -- Creative Commons Attribution 4.0
+   International (CC BY 4.0): logs/, large_input_data/, data/ (except the
+   third-party tables in data/external/ and data/nb201_all.pickle, which keep
+   their authors' terms), analysis/results/, tables/, figures/, README.md, and
+   the manuscript sources where they are distributed with this archive.
+   https://creativecommons.org/licenses/by/4.0/legalcode
+
+----------------------------------------------------------------------------
 MIT License
 
-Copyright (c) 2026 Akashdeep Singh
+Copyright (c) 2026 Dmitry Ignatov, Akashdeep Singh, Sai Revanth Mulukuledu,
+Radu Timofte
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

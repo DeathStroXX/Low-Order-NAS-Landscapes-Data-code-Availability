@@ -1,0 +1,31 @@
+{
+ "emulator": {
+  "cifar10": {
+   "n": 5319,
+   "rho_emulator": 0.5761343361386747,
+   "rho_measured": 0.5795519364061663
+  },
+  "cifar100": {
+   "n": 4763,
+   "rho_emulator": 0.32046208029846407,
+   "rho_measured": 0.33284905926531183
+  }
+ },
+ "raw_high_band_cifar100": {
+  "n": 4763,
+  "n_high": 144,
+  "mean_high": 16.701666666666668,
+  "mean_all": 15.42305689691371,
+  "gap": 1.2786097697529577
+ },
+ "top1_epoch_vs_predictor": {
+  "cifar10": {
+   "n_runs": 17,
+   "mean": 18.05764705882353
+  },
+  "cifar100": {
+   "n_runs": 17,
+   "mean": 27.01529411764706
+  }
+ }
+}

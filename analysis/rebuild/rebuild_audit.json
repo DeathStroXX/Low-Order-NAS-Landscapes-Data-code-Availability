@@ -1,0 +1,380 @@
+{
+  "n_runs": 34,
+  "n_observations": 10082,
+  "n_uid_dataset_pairs": 8427,
+  "gene_coverage": {
+    "exact_uid_match_to_inline_log": 1169,
+    "not_present_in_supplied_logs": 5925,
+    "inline_in_same_run": 2988
+  },
+  "curve_coverage": {
+    "verified_3_epochs": 10082
+  },
+  "runs": [
+    {
+      "run": "baseline/cifar10/seed1001_ef270532-7d29-4c29-a870-8423d44ba945",
+      "n_observations": 290,
+      "genes": {
+        "exact_uid_match_to_inline_log": 11,
+        "not_present_in_supplied_logs": 279
+      },
+      "curves": {
+        "verified_3_epochs": 290
+      }
+    },
+    {
+      "run": "baseline/cifar10/seed1002_ad496f76-c080-4a8d-946f-40e894496ae1",
+      "n_observations": 298,
+      "genes": {
+        "exact_uid_match_to_inline_log": 17,
+        "not_present_in_supplied_logs": 281
+      },
+      "curves": {
+        "verified_3_epochs": 298
+      }
+    },
+    {
+      "run": "baseline/cifar10/seed1003_75a65c34-d856-4f06-bf3f-360ef9a52741",
+      "n_observations": 293,
+      "genes": {
+        "not_present_in_supplied_logs": 283,
+        "exact_uid_match_to_inline_log": 10
+      },
+      "curves": {
+        "verified_3_epochs": 293
+      }
+    },
+    {
+      "run": "baseline/cifar100/seed1001_454e4a7d-f6c1-4548-a229-1d38439f4758",
+      "n_observations": 226,
+      "genes": {
+        "exact_uid_match_to_inline_log": 10,
+        "not_present_in_supplied_logs": 216
+      },
+      "curves": {
+        "verified_3_epochs": 226
+      }
+    },
+    {
+      "run": "baseline/cifar100/seed1002_0bd37ee5-4334-42ed-9b8f-81e111eaf496",
+      "n_observations": 268,
+      "genes": {
+        "exact_uid_match_to_inline_log": 16,
+        "not_present_in_supplied_logs": 252
+      },
+      "curves": {
+        "verified_3_epochs": 268
+      }
+    },
+    {
+      "run": "baseline/cifar100/seed1003_c4b27f29-3b6a-457a-a212-4ec10d5459ec",
+      "n_observations": 282,
+      "genes": {
+        "exact_uid_match_to_inline_log": 14,
+        "not_present_in_supplied_logs": 268
+      },
+      "curves": {
+        "verified_3_epochs": 282
+      }
+    },
+    {
+      "run": "deepseek/cifar10/seed1001_ac6e42a5-1b18-4ca1-b184-ddea8ac523e8",
+      "n_observations": 249,
+      "genes": {
+        "exact_uid_match_to_inline_log": 61,
+        "not_present_in_supplied_logs": 188
+      },
+      "curves": {
+        "verified_3_epochs": 249
+      }
+    },
+    {
+      "run": "deepseek/cifar10/seed1002_aac30ae9-e851-41d0-b312-d39b347daa41",
+      "n_observations": 338,
+      "genes": {
+        "exact_uid_match_to_inline_log": 66,
+        "not_present_in_supplied_logs": 272
+      },
+      "curves": {
+        "verified_3_epochs": 338
+      }
+    },
+    {
+      "run": "deepseek/cifar10/seed1003_891ff950-6a3f-4d77-a386-4ff350ea2832",
+      "n_observations": 323,
+      "genes": {
+        "not_present_in_supplied_logs": 252,
+        "exact_uid_match_to_inline_log": 71
+      },
+      "curves": {
+        "verified_3_epochs": 323
+      }
+    },
+    {
+      "run": "deepseek/cifar100/seed1001_c6ab3696-9d03-485b-bb0c-c841b4e2995a",
+      "n_observations": 214,
+      "genes": {
+        "exact_uid_match_to_inline_log": 59,
+        "not_present_in_supplied_logs": 155
+      },
+      "curves": {
+        "verified_3_epochs": 214
+      }
+    },
+    {
+      "run": "deepseek/cifar100/seed1002_e11f0ae9-b9c9-416d-8ce0-7b805f33af21",
+      "n_observations": 285,
+      "genes": {
+        "exact_uid_match_to_inline_log": 60,
+        "not_present_in_supplied_logs": 225
+      },
+      "curves": {
+        "verified_3_epochs": 285
+      }
+    },
+    {
+      "run": "deepseek/cifar100/seed1003_16b358fa-05d5-4fda-a58c-bd2acfba6abb",
+      "n_observations": 283,
+      "genes": {
+        "exact_uid_match_to_inline_log": 68,
+        "not_present_in_supplied_logs": 215
+      },
+      "curves": {
+        "verified_3_epochs": 283
+      }
+    },
+    {
+      "run": "frozen/cifar10/seed2001_dfd8ba84-c4f8-4e5d-8799-b02d62941232",
+      "n_observations": 317,
+      "genes": {
+        "inline_in_same_run": 317
+      },
+      "curves": {
+        "verified_3_epochs": 317
+      }
+    },
+    {
+      "run": "frozen/cifar10/seed2002_b88def5a-fbc3-462b-b63f-7d1a5ccb3c3a",
+      "n_observations": 312,
+      "genes": {
+        "inline_in_same_run": 312
+      },
+      "curves": {
+        "verified_3_epochs": 312
+      }
+    },
+    {
+      "run": "frozen/cifar10/seed2003_f3350168-ce63-43a2-b144-02cb293924bf",
+      "n_observations": 316,
+      "genes": {
+        "inline_in_same_run": 316
+      },
+      "curves": {
+        "verified_3_epochs": 316
+      }
+    },
+    {
+      "run": "frozen/cifar10/seed2004_ca8be5f2-344d-44bc-8f5a-a4abebb3a3cc",
+      "n_observations": 291,
+      "genes": {
+        "inline_in_same_run": 291
+      },
+      "curves": {
+        "verified_3_epochs": 291
+      }
+    },
+    {
+      "run": "frozen/cifar10/seed2005_178f14c9-b18d-45a2-9a2a-daade9168d3e",
+      "n_observations": 311,
+      "genes": {
+        "inline_in_same_run": 311
+      },
+      "curves": {
+        "verified_3_epochs": 311
+      }
+    },
+    {
+      "run": "frozen/cifar100/seed1001_9897750e-1112-4d96-a8f1-3b576f42a72d",
+      "n_observations": 289,
+      "genes": {
+        "inline_in_same_run": 289
+      },
+      "curves": {
+        "verified_3_epochs": 289
+      }
+    },
+    {
+      "run": "frozen/cifar100/seed1002_84c56f61-535d-4529-ab08-58f62e0488f9",
+      "n_observations": 283,
+      "genes": {
+        "inline_in_same_run": 283
+      },
+      "curves": {
+        "verified_3_epochs": 283
+      }
+    },
+    {
+      "run": "frozen/cifar100/seed1003_89af1815-4e57-43e6-8bf4-1404a03ef508",
+      "n_observations": 288,
+      "genes": {
+        "inline_in_same_run": 288
+      },
+      "curves": {
+        "verified_3_epochs": 288
+      }
+    },
+    {
+      "run": "frozen/cifar100/seed1004_ecbc68c8-87ae-4407-b332-6a5385ece7e0",
+      "n_observations": 295,
+      "genes": {
+        "inline_in_same_run": 295
+      },
+      "curves": {
+        "verified_3_epochs": 295
+      }
+    },
+    {
+      "run": "frozen/cifar100/seed1005_e56a5d01-44b3-4fe0-9c0d-5b3edb3175df",
+      "n_observations": 286,
+      "genes": {
+        "inline_in_same_run": 286
+      },
+      "curves": {
+        "verified_3_epochs": 286
+      }
+    },
+    {
+      "run": "mistral/cifar10/seed1001_ec3abd84-0395-41ef-bf6a-7b3ad8505d56",
+      "n_observations": 316,
+      "genes": {
+        "exact_uid_match_to_inline_log": 77,
+        "not_present_in_supplied_logs": 239
+      },
+      "curves": {
+        "verified_3_epochs": 316
+      }
+    },
+    {
+      "run": "mistral/cifar10/seed1002_60cb9bf7-1a26-4d40-a376-4ac219b4846c",
+      "n_observations": 331,
+      "genes": {
+        "exact_uid_match_to_inline_log": 67,
+        "not_present_in_supplied_logs": 264
+      },
+      "curves": {
+        "verified_3_epochs": 331
+      }
+    },
+    {
+      "run": "mistral/cifar10/seed1003_1281fde0-95af-4970-8055-434572cc009a",
+      "n_observations": 320,
+      "genes": {
+        "not_present_in_supplied_logs": 254,
+        "exact_uid_match_to_inline_log": 66
+      },
+      "curves": {
+        "verified_3_epochs": 320
+      }
+    },
+    {
+      "run": "mistral/cifar100/seed1001_5bf94b05-eab8-4c3d-9f16-1c78abe8257f",
+      "n_observations": 286,
+      "genes": {
+        "exact_uid_match_to_inline_log": 63,
+        "not_present_in_supplied_logs": 223
+      },
+      "curves": {
+        "verified_3_epochs": 286
+      }
+    },
+    {
+      "run": "mistral/cifar100/seed1002_4059aba3-2201-4be1-86ed-b1574b154a7f",
+      "n_observations": 302,
+      "genes": {
+        "exact_uid_match_to_inline_log": 35,
+        "not_present_in_supplied_logs": 267
+      },
+      "curves": {
+        "verified_3_epochs": 302
+      }
+    },
+    {
+      "run": "mistral/cifar100/seed1003_4b453e22-55a1-4a31-8e37-e18beb885302",
+      "n_observations": 329,
+      "genes": {
+        "exact_uid_match_to_inline_log": 85,
+        "not_present_in_supplied_logs": 244
+      },
+      "curves": {
+        "verified_3_epochs": 329
+      }
+    },
+    {
+      "run": "qwen/cifar10/seed1001_b70d86a3-2e8a-4aa7-932f-79af4b23682c",
+      "n_observations": 332,
+      "genes": {
+        "exact_uid_match_to_inline_log": 38,
+        "not_present_in_supplied_logs": 294
+      },
+      "curves": {
+        "verified_3_epochs": 332
+      }
+    },
+    {
+      "run": "qwen/cifar10/seed1002_e33f34cf-046b-4cd4-a748-1dc9e214794d",
+      "n_observations": 346,
+      "genes": {
+        "exact_uid_match_to_inline_log": 67,
+        "not_present_in_supplied_logs": 279
+      },
+      "curves": {
+        "verified_3_epochs": 346
+      }
+    },
+    {
+      "run": "qwen/cifar10/seed1003_7a30294d-99a1-485a-8f65-0765589f0d1f",
+      "n_observations": 336,
+      "genes": {
+        "not_present_in_supplied_logs": 266,
+        "exact_uid_match_to_inline_log": 70
+      },
+      "curves": {
+        "verified_3_epochs": 336
+      }
+    },
+    {
+      "run": "qwen/cifar100/seed1001_a3ed8bc8-1fd0-4060-a446-128ceda33cd6",
+      "n_observations": 282,
+      "genes": {
+        "exact_uid_match_to_inline_log": 36,
+        "not_present_in_supplied_logs": 246
+      },
+      "curves": {
+        "verified_3_epochs": 282
+      }
+    },
+    {
+      "run": "qwen/cifar100/seed1002_0816d88e-b8d7-4f67-8fd9-7efe4d68865e",
+      "n_observations": 297,
+      "genes": {
+        "exact_uid_match_to_inline_log": 40,
+        "not_present_in_supplied_logs": 257
+      },
+      "curves": {
+        "verified_3_epochs": 297
+      }
+    },
+    {
+      "run": "qwen/cifar100/seed1003_10bc47ce-d7ac-4eb5-92a0-b1bb19b52aac",
+      "n_observations": 268,
+      "genes": {
+        "exact_uid_match_to_inline_log": 62,
+        "not_present_in_supplied_logs": 206
+      },
+      "curves": {
+        "verified_3_epochs": 268
+      }
+    }
+  ],
+  "note": "No values were read from the old CSV. Unknown gene fields are blank."
+}

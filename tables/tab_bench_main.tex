@@ -1,0 +1,28 @@
+\begin{table}[!t]
+\centering
+\caption{The concentration beyond NAS-Bench-201, and a measured null. \textbf{(a)} NAS-Bench-Macro, a second complete factorial. \textbf{(b)} The spectrum of the difference between two trainings of the same architectures, whose content is pure noise, beside the analytic white-noise null. \textbf{(c)} HW-NAS-Bench device measurements on the NAS-Bench-201 grid: an estimator that resolves a high-order tail when one is there (ranges over the measured columns). Shares of variance, \%. Supplementary Table~S15 adds the exactness certificates.}
+\label{tab:bench_main}
+\footnotesize
+\setlength{\tabcolsep}{3.2pt}
+\begin{tabular}{l rrrrr}
+\toprule
+\multicolumn{6}{l}{\emph{(a) NAS-Bench-Macro, $3^{8}=6{,}561$ cells, CIFAR-10}} \\
+order & 1 & 2 & 3 & $\le 2$ & $\le 3$ \\
+\midrule
+accuracy & 69.4 & 20.6 & 7.1 & \textbf{90.0} & \textbf{97.1} \\
+\addlinespace[1pt]
+\multicolumn{6}{l}{\emph{(b) the null, measured rather than derived}} \\
+seed difference & 0.6 & 3.0 & 7.8 & 3.6 & 11.3 \\
+white-noise null & 0.2 & 1.7 & 6.8 & 2.0 & 8.8 \\
+\multicolumn{6}{l}{\quad\footnotesize the two agree to 2.0 points at every one of the eight orders} \\
+\multicolumn{6}{l}{\footnotesize skewness $-4.00$, top-decile spread 1.6\%, $\le 2$ recalibrated 97.1\%} \\
+\addlinespace[2pt]\midrule
+\multicolumn{6}{l}{\emph{(c) a measured noise floor on the $5^{6}$ grid: HW-NAS-Bench}} \\
+& \multicolumn{2}{c}{order 1} & \multicolumn{2}{c}{order 6} & $n$ \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+measured on the device & 56.2 & 90.6 & 0.17 & 3.52 & 15 \\
+from a cost model & 98.1 & 100.0 & 0.000 & 0.005 & 12 \\
+accuracy, same grid & 28.6 & 61.3 & 0.13 & 0.25 & 3 \\
+\bottomrule
+\end{tabular}
+\end{table}
