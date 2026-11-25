@@ -122,7 +122,7 @@ def main():
          r'evenly), on architectures whose 1-, 2- and 3-epoch accuracies were all measured. The',
          r'number reported is the measured 3-epoch accuracy of the architecture the policy',
          r'returned, over 4{,}000 draws, with a 95\% bootstrap interval. The first line is the',
-         r'flat low-fidelity policy a NAS pipeline usually uses---one epoch on every candidate,',
+         r'flat low-fidelity policy a NAS pipeline usually uses: one epoch on every candidate,',
          r'keep the best; the next three start from free screening and each adds one component',
          r'of the recipe to the line above. Differences are computed before rounding. Our own',
          r'pipeline selected on an LLM predictor that needs three epochs, which is worse still',

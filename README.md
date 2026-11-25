@@ -1,8 +1,8 @@
 # Low-Order Structure in Neural Architecture Search Landscapes
 
-**Exact spectra, a scale illusion, and budget policy — analysis code, data, logs and results**
+**Exact spectra, a scale illusion, and budget policy: analysis code, data, logs and results**
 
-[![DOI](https://zenodo.org/badge/DOI/ZENODO-DOI-PLACEHOLDER.svg)](https://doi.org/ZENODO-DOI-PLACEHOLDER)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24529194.svg)](https://doi.org/10.5281/zenodo.24529194)
 [![Code: MIT](https://img.shields.io/badge/code-MIT-blue.svg)](LICENSE)
 [![Data: CC BY 4.0](https://img.shields.io/badge/data-CC%20BY%204.0-blue.svg)](LICENSE)
 [![Python 3.10](https://img.shields.io/badge/python-3.10-blue.svg)](https://www.python.org/)
@@ -15,7 +15,7 @@ supplement. Nothing here needs a GPU: the training runs are already recorded.
 
 Authors: Dmitry Ignatov, Akashdeep Singh, Sai Revanth Mulukuledu, Radu Timofte
 (Computer Vision Lab, CAIDAS & IFI, University of Würzburg). Submitted to IEEE Transactions on
-Neural Networks and Learning Systems. Archived release: https://doi.org/ZENODO-DOI-PLACEHOLDER
+Neural Networks and Learning Systems. Archived release: https://doi.org/10.5281/zenodo.24529194
 
 ---
 
@@ -170,7 +170,7 @@ pre-registered and not yet run.
   author = {Ignatov, Dmitry and Singh, Akashdeep and Mulukuledu, Sai Revanth and Timofte, Radu},
   title  = {Low-Order Structure in Neural Architecture Search Landscapes: code, data and logs},
   year   = {2026},
-  doi    = {ZENODO-DOI-PLACEHOLDER},
+  doi    = {10.5281/zenodo.24529194},
   url    = {https://github.com/DeathStroXX/Low-Order-NAS-Landscapes-Data-code-Availability}
 }
 ```

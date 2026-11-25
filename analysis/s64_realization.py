@@ -1,6 +1,6 @@
 """How much of the exact degree-2 optimum each cheap ranker actually realizes.
 
-Proposition 1 gives an upper bound in squared error, and the scale remark of Section IV-D says
+Proposition 1 gives an upper bound in squared error, and the scale remark of Section IV-C says
 that bound does
 not transfer to a rank or a regret. What it leaves is a different and more useful reference
 point: the squared-error-optimal degree-2 function g_2 is an *exhibited* element of G_2, so

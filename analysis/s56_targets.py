@@ -285,7 +285,7 @@ def main():
              r'construction, so their spectrum is known before it is measured: recovering it '
              r'is a correctness check, not a finding. \textbf{(b)} Latency is additive up to '
              r'measurement error, so its order-6 share is this grid\textquotesingle s own '
-             r'noise floor---$6$ to $25$ times what accuracy shows there. \textbf{(c)} '
+             r'noise floor, $6$ to $25$ times what accuracy shows there. \textbf{(c)} '
              r'CIFAR-10 alone, pushed through $z\mapsto z^{p}$ on the accuracy rescaled to '
              r'$[0,1]$: the predicted column is read '
              r'off that one landscape\textquotesingle s curve at each task\textquotesingle s '

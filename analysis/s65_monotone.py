@@ -279,7 +279,7 @@ def emit_table(o):
     a(r'\centering')
     a(r'\caption{Which monotone map, and what the choice costs. Every row is a strictly '
       r'increasing map of the accuracies, so every row leaves the architecture ranking of the '
-      r'response---and therefore the truth each is scored against---untouched; only the '
+      r'response (and therefore the truth each is scored against) untouched; only the '
       r'function being decomposed changes. $A_{\le 2}$ is the exact share of variance the '
       r'mapped response puts at order at most two, which is the main '
       r'paper\textquotesingle s degree-2 ceiling for that scale. '

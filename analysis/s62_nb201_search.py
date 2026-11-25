@@ -833,7 +833,7 @@ def emit_table_sm(o):
       r'budgets and summarized over all %d cells. The GPU-hours are the '
       r"benchmark\textquotesingle s own record for the cells queried. The last block prices "
       r'the single-column protocol C100 and IN16 are forced into, by rerunning the replay on '
-      r'CIFAR-10---which carries both columns---with the test column as the search signal: '
+      r'CIFAR-10, which carries both columns, with the test column as the search signal: '
       r'the optimism is %.2f--%.2f points, %s.}'
       % (led['n_cells'],
          min(pbx['optimism'][a_]['100'] for a_ in ALGOS),

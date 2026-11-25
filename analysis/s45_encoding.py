@@ -257,7 +257,7 @@ def emit_table(o):
       r'anticipates it. Top: on NAS-Bench-101 the genotype encoding is an adjacency matrix, '
       r'so what a cell computes depends on paths rather than on single edges; the ridge '
       r'saturates and more labels do not help. Re-encoding the same architectures by their '
-      r'input-to-output paths---still a ridge, still no training---recovers the signal. '
+      r'input-to-output paths (still a ridge, still no training) recovers the signal. '
       r'Bottom: held-out $R^{2}$, from the same 1{,}000 labels, separates a model that is '
       r'merely under-identified from one whose features cannot express the function at all, '
       r'and costs nothing. A ranker with $R^{2} \le 0$ out of sample is worse than no '

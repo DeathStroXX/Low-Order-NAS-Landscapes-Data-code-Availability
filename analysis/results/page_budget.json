@@ -16,10 +16,10 @@
   },
   "footprint": {
     "caption_words": 412,
-    "estimated_lines": 1209.1,
-    "estimated_pages": 11.22,
+    "estimated_lines": 1160.4,
+    "estimated_pages": 10.68,
     "figures": 2,
-    "prose_words": 8096,
+    "prose_words": 7634,
     "references": 35,
     "table_lines": 76,
     "tables": 4
@@ -46,7 +46,7 @@
     "title: 15 words (this venue states no cap)",
     "single-anonymous: \\blindfalse is set, so the author block ships",
     "bibliography: main.bbl not built; charging 35 cited keys (run bibtex for the authoritative count)",
-    "estimated 11.22 pages: about 2 page(s) beyond the 10-page free allowance, USD 400 in mandatory over-length charges (normal here; budget for it)"
+    "estimated 10.68 pages: about 1 page(s) beyond the 10-page free allowance, USD 200 in mandatory over-length charges (normal here; budget for it)"
   ],
   "problems": [],
   "submission_type": "Full Paper"

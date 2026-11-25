@@ -1,5 +1,5 @@
 {
- "logdir": "/tmp/claude-0/-home-claude/c87e9bfc-a8b5-5e62-9f67-db87f3e16607/scratchpad/dryrun",
+ "logdir": "analysis/confirm/logs_dry",
  "n_log_files": 42,
  "seeds_registered": [
   4001,

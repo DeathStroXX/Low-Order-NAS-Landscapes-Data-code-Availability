@@ -115,7 +115,12 @@ def main():
     logdir = sys.argv[1] if len(sys.argv) > 1 else os.path.join(HERE, 'logs')
     rows = load(logdir) if os.path.isdir(logdir) else []
     is_dry = dry(rows)
-    out = {'logdir': logdir, 'n_log_files': len(rows), 'seeds_registered': SEEDS,
+    # record the log folder relative to the archive, never as a machine-specific absolute path
+    root = os.path.dirname(os.path.dirname(HERE))
+    absdir = os.path.abspath(logdir)
+    shown = (os.path.relpath(absdir, root) if absdir.startswith(root + os.sep)
+             else os.path.basename(absdir.rstrip(os.sep)))
+    out = {'logdir': shown, 'n_log_files': len(rows), 'seeds_registered': SEEDS,
            'rule': 'see analysis/confirm/PREREGISTRATION.md section 2',
            'dry_run': is_dry,
            'half_threshold': HALF, 'n_boot': NBOOT, 'claims': {}}
