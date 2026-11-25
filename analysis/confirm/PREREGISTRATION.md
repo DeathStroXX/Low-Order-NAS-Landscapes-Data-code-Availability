@@ -1,7 +1,7 @@
 # The one confirmation left, pre-registered
 
 Section VIII of the paper measures two policy changes on the released per-architecture
-record and on FractalNAS-13 rather than inside a new search. That is the paper's main
+record and on the surrogate benchmark rather than inside a new search. That is the paper's main
 remaining weakness and it is named as such in the Limitations. This document fixes, in
 advance, exactly what the confirming run will be, what counts as confirmation and what counts
 as refutation, so that the result cannot be chosen after it is seen.

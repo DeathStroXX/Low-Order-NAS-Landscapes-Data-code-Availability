@@ -2,7 +2,7 @@
 
 **Exact spectra, a scale illusion, and budget policy: analysis code, data, logs and results**
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24529194.svg)](https://doi.org/10.5281/zenodo.24529194)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24529193.svg)](https://doi.org/10.5281/zenodo.24529193)
 [![Code: MIT](https://img.shields.io/badge/code-MIT-blue.svg)](LICENSE)
 [![Data: CC BY 4.0](https://img.shields.io/badge/data-CC%20BY%204.0-blue.svg)](LICENSE)
 [![Python 3.10](https://img.shields.io/badge/python-3.10-blue.svg)](https://www.python.org/)
@@ -15,7 +15,7 @@ supplement. Nothing here needs a GPU: the training runs are already recorded.
 
 Authors: Dmitry Ignatov, Akashdeep Singh, Sai Revanth Mulukuledu, Radu Timofte
 (Computer Vision Lab, CAIDAS & IFI, University of Würzburg). Submitted to IEEE Transactions on
-Neural Networks and Learning Systems. Archived release: https://doi.org/10.5281/zenodo.24529194
+Neural Networks and Learning Systems. Archived release: https://doi.org/10.5281/zenodo.24529193
 
 ---
 
@@ -59,7 +59,7 @@ analysis/
 ├── policies.py, statsutil.py
 ├── s02_ … s73_*.py         the analysis pipeline, one script per result (order: `make reproduce`)
 ├── zerocost/               reference implementations of the 13 zero-cost proxies (Apache-2.0)
-├── confirm/                the pre-registration (unmodified), its runner and its scorer
+├── confirm/                the pre-registration, its runner and its scorer
 ├── rebuild/                an independent reconstruction of the record from the raw logs
 ├── requirements.txt        the package versions the committed results were made with
 └── results/                one JSON per analysis step: every number in the paper is in one
@@ -118,7 +118,7 @@ together takes under an hour on one CPU core.
 | Per-architecture record | `data/gene_diversity_benchmark.csv` | the genes of every evaluation (see below) |
 | NAS-Bench-201, NAS-Bench-Macro, HW-NAS-Bench, NATS-Bench (size space) | fetched, not redistributed: `data/external/PROVENANCE.md` gives each command and the SHA-256 of the copy this study read | the exact spectra and everything on those grids |
 | NAS-Bench-Suite-Zero proxy scores | fetched from NASLib, not redistributed (`data/external/PROVENANCE.md`) | the zero-cost proxy comparison |
-| Pre-registration | `analysis/confirm/PREREGISTRATION.md`, unmodified | the confirming run still outstanding |
+| Pre-registration | `analysis/confirm/PREREGISTRATION.md` (protocol as registered; Supplementary Section S15) | the confirming run still outstanding |
 
 **The per-architecture record.** One row per architecture each of the 34 runs evaluated
 (10,082): its run, its 1- and 3-epoch accuracy, the predictor's value, its 13 genes, and the
@@ -170,7 +170,7 @@ pre-registered and not yet run.
   author = {Ignatov, Dmitry and Singh, Akashdeep and Mulukuledu, Sai Revanth and Timofte, Radu},
   title  = {Low-Order Structure in Neural Architecture Search Landscapes: code, data and logs},
   year   = {2026},
-  doi    = {10.5281/zenodo.24529194},
+  doi    = {10.5281/zenodo.24529193},
   url    = {https://github.com/DeathStroXX/Low-Order-NAS-Landscapes-Data-code-Availability}
 }
 ```

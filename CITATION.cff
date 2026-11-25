@@ -15,8 +15,8 @@ authors:
   - family-names: Timofte
     given-names: Radu
     orcid: "https://orcid.org/0000-0002-1478-0402"
-doi: "10.5281/zenodo.24529194"
+doi: "10.5281/zenodo.24529193"
 repository-code: "https://github.com/DeathStroXX/Low-Order-NAS-Landscapes-Data-code-Availability"
 license: [MIT, CC-BY-4.0]
-version: "1.0.0"
-date-released: "DATE-PLACEHOLDER"
+version: "1.1.0"
+date-released: "2026-11-25"
