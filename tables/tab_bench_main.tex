@@ -1,10 +1,10 @@
 \begin{table}[!t]
 \centering
-\caption{The concentration beyond NAS-Bench-201, and a measured null. \textbf{(a)} NAS-Bench-Macro, a second complete factorial. \textbf{(b)} The spectrum of the difference between two trainings of the same architectures, whose content is pure noise, beside the analytic white-noise null. \textbf{(c)} HW-NAS-Bench device measurements on the NAS-Bench-201 grid: an estimator that resolves a high-order tail when one is there (ranges over the measured columns). Shares of variance, \%. Supplementary Table~S15 adds the exactness certificates.}
+\caption{Low-order concentration on NAS-Bench-Macro, a measured null and a hardware noise floor}
 \label{tab:bench_main}
 \footnotesize
 \setlength{\tabcolsep}{3.2pt}
-\begin{tabular}{l rrrrr}
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}l rrrrr}
 \toprule
 \multicolumn{6}{l}{\emph{(a) NAS-Bench-Macro, $3^{8}=6{,}561$ cells, CIFAR-10}} \\
 order & 1 & 2 & 3 & $\le 2$ & $\le 3$ \\
@@ -24,5 +24,6 @@ measured on the device & 56.2 & 90.6 & 0.17 & 3.52 & 15 \\
 from a cost model & 98.1 & 100.0 & 0.000 & 0.005 & 12 \\
 accuracy, same grid & 28.6 & 61.3 & 0.13 & 0.25 & 3 \\
 \bottomrule
-\end{tabular}
+\multicolumn{6}{@{}p{\linewidth}@{}}{\scriptsize Shares of variance (\%). (a) NAS-Bench-Macro, CIFAR-10. (b) Difference between two trainings of the same architectures, beside the analytic white-noise null. (c) HW-NAS-Bench device measurements on the NAS-Bench-201 grid; ranges over the measured columns. Supplementary Table~S15 adds the exactness certificates.} \\
+\end{tabular*}
 \end{table}

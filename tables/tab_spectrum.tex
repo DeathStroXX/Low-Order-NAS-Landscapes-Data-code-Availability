@@ -1,10 +1,10 @@
 \begin{table}[!htb]
 \centering
-\caption{The exact amplitude spectrum of the NAS-Bench-201 landscape: the share of accuracy variance carried at each interaction order. The space is a complete $5^{6}$ factorial, so the decomposition is exact and no model is fitted. \emph{Null} is where white noise would put its variance, fixed by the $\binom{6}{k}4^{k}$ basis directions at each order. \emph{Recal.} repeats the decomposition after a monotone recalibration of the accuracy scale. The last block is what $g_d$, the squared-error-optimal degree-$d$ function, achieves in the metrics a budget is decided in: attainable values, not bounds, and they do not order as the ceiling does.}
+\caption{Exact amplitude spectrum of NAS-Bench-201, by interaction order}
 \label{tab:spectrum}
 \footnotesize
 \setlength{\tabcolsep}{3.4pt}
-\begin{tabular}{l rrr c rrr}
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}l rrr c rrr}
 \toprule
 & \multicolumn{3}{c}{share of variance, raw} & Null & \multicolumn{3}{c}{after recalibration} \\
 \cmidrule(lr){2-4}\cmidrule(lr){6-8}
@@ -34,5 +34,6 @@ regret$(g_{1})$ & 0.90 & 1.92 & 1.60 & --- & 0.90 & 1.92 & 1.60 \\
 regret$(g_{2})$ & 1.30 & 3.18 & 1.36 & --- & 0.00 & 0.00 & 0.00 \\
 regret$(g_{3})$ & 2.19 & 4.90 & 0.90 & --- & 0.32 & 0.00 & 0.53 \\
 \bottomrule
-\end{tabular}
+\multicolumn{8}{@{}p{\linewidth}@{}}{\scriptsize Shares of accuracy variance (\%). Null: white noise, from the $\binom{6}{k}4^{k}$ basis directions at order $k$. Recal.: after a monotone recalibration. $g_d$: the squared-error-optimal degree-$d$ function; regret at a shortlist of ten, in accuracy points.} \\
+\end{tabular*}
 \end{table}

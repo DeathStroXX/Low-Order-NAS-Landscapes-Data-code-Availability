@@ -91,6 +91,7 @@ EXPECT_IN_SUPP = {
     'Section~S12': 'sec:sm_targets',
     'Section~S13': 'sec:sm_measure',
     'Section~S14': 'sec:sm_policy_full',
+    'Section~S15': 'sec:sm_confirm',
     'Section~S16': 'sec:sm_learned',
     'Section~S17': 'sec:sm_proofs',
     'Section~S18': 'sec:sm_robust',
@@ -102,6 +103,7 @@ EXPECT_IN_SUPP = {
     'Table~S16': 'tab:realization',
     'Table~S13': 'tab:search_sm',
     'Table~S14': 'tab:learned',
+    'Table~S17': 'tab:recal_full',
 }
 
 ROMAN = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII', 'XIII',

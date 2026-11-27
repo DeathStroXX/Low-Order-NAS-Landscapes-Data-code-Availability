@@ -1,5 +1,5 @@
 {
-  "abstract_words": 248,
+  "abstract_words": 241,
   "calibration_lines_to_pages": {
     "intercept": -2.021897810218979,
     "pages_per_line": 0.010948905109489052,
@@ -15,13 +15,13 @@
     ]
   },
   "footprint": {
-    "caption_words": 412,
-    "estimated_lines": 1160.9,
-    "estimated_pages": 10.69,
+    "caption_words": 42,
+    "estimated_lines": 1126.0,
+    "estimated_pages": 10.31,
     "figures": 2,
-    "prose_words": 7638,
+    "prose_words": 7639,
     "references": 35,
-    "table_lines": 76,
+    "table_lines": 80,
     "tables": 4
   },
   "journal": "IEEE Transactions on Neural Networks and Learning Systems",
@@ -39,14 +39,14 @@
     "pages": 10
   },
   "notes": [
-    "abstract: 248 words (the journal requires 150-250)",
+    "abstract: 241 words (the journal requires 150-250)",
     "abstract: no abbreviations",
     "keywords: 5 (4-5 required)",
     "impact statement: not required by this venue, and absent",
     "title: 15 words (this venue states no cap)",
-    "single-anonymous: \\blindfalse is set, so the author block ships",
+    "double-anonymous: \\blindtrue is set",
     "bibliography: main.bbl not built; charging 35 cited keys (run bibtex for the authoritative count)",
-    "estimated 10.69 pages: about 1 page(s) beyond the 10-page free allowance, USD 200 in mandatory over-length charges (normal here; budget for it)"
+    "estimated 10.31 pages: about 1 page(s) beyond the 10-page free allowance, USD 200 in mandatory over-length charges (normal here; budget for it)"
   ],
   "problems": [],
   "submission_type": "Full Paper"

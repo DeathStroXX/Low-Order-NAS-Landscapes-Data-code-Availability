@@ -767,21 +767,12 @@ def emit_table(o):
     led = o['ledger']['evolution']
     a(r'\begin{table}[t]')
     a(r'\centering')
-    a(r'\caption{What the ranking core of Algorithm~1 returns, with the interval that belongs to it. '
-      r'Query-budget search replayed on NAS-Bench-201~\cite{dong2020nasbench201}: mean '
-      r'accuracy of the architecture returned after training $N$ of the 15{,}625 cells, '
-      r'$\pm$ the half-width of a 95\%% percentile-bootstrap interval, over %d independent '
-      r'seeds. Every evaluation is a lookup and \emph{no network was trained}. Mean regret is '
-      r'exactly the grid-optimum row minus the entry, so it is not printed twice. The last '
-      r'line counts every one of the %d budget-by-dataset cells rather than the budgets '
-      r'shown, since quoting the contrast at one budget would let the choice of budget do the '
-      r'arguing. Supplementary Table~S13 gives the difference of means with its interval, the '
-      r'GPU-hours the queries imply, and the price of the single-column protocol.}'
-      % (o['protocol']['seeds'], led['n_cells']))
+    a(r'\caption{Query-budget search replayed on NAS-Bench-201: accuracy of the '
+      r'architecture returned}')
     a(r'\label{tab:search}')
     a(r'\footnotesize')
     a(r'\setlength{\tabcolsep}{3.0pt}')
-    a(r'\begin{tabular}{l ccc}')
+    a(r'\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}l ccc}')
     a(r'\toprule')
     a(r' & C10 & C100 & IN16 \\')
     a(r'\midrule')
@@ -807,7 +798,14 @@ def emit_table(o):
     a(r'\multicolumn{4}{l}{\footnotesize evolution in %d, tied in %d, behind in %d} \\'
       % (led['ahead'], led['tied'], led['behind']))
     a(r'\bottomrule')
-    a(r'\end{tabular}')
+    a(r'\multicolumn{4}{@{}p{\linewidth}@{}}{\scriptsize Mean accuracy after training $N$ of '
+      r'the 15{,}625 cells, $\pm$ the half-width of a 95\%% percentile-bootstrap interval, %d '
+      r'seeds. Spectrum recipe: the ranking core of '
+      r'Algorithm~1. Regret is the grid-optimum row minus the entry. The last lines count all '
+      r'%d budget-by-dataset cells. Supplementary Table~S13 gives the differences of means, the '
+      r'implied GPU-hours and the single-column protocol.} \\'
+      % (o['protocol']['seeds'], led['n_cells']))
+    a(r'\end{tabular*}')
     a(r'\end{table}')
     p = os.path.join(ROOT, 'tables', 'tab_search.tex')
     with open(p, 'w') as fh:

@@ -1,10 +1,10 @@
 \begin{table}[!htb]
 \centering
-\caption{Recalibrating the target\textquotesingle s own labels against transferring a raw-scale prior from a harder dataset: same ridge, same fit sets, scored on the architectures none of them saw, 20 draws. Recalibration wins at every budget on both metrics, each win by at least 2.4 standard errors of the difference; Supplementary Table~S17 gives the standard errors and adds transfer with the source recalibrated too, and both sources combined. The last block is the control: where accuracies are not compressed the same recalibration buys almost no rank fidelity, lowers regret only slightly on CIFAR-10 and costs regret on CIFAR-100, as compression rather than ranks as the mechanism predicts.}
+\caption{Own recalibrated labels against a transferred raw-scale prior, with an uncompressed control}
 \label{tab:recal}
 \footnotesize
 \setlength{\tabcolsep}{3.2pt}
-\begin{tabular}{l r rrr c rrr}
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}l r rrr c rrr}
 \toprule
 & & \multicolumn{3}{c}{Spearman $\rho$} & & \multicolumn{3}{c}{regret at ten} \\
 \cmidrule(lr){3-5}\cmidrule(lr){7-9}
@@ -34,5 +34,6 @@ Target & $n$ & raw & \textbf{recal.} & transf. & & raw & \textbf{recal.} & trans
 \quad C100 & 500 & 0.806 & 0.820 & --- & & 0.92 & 2.14 & --- \\
 \quad C100 & 1000 & 0.865 & 0.883 & --- & & 0.73 & 1.32 & --- \\
 \bottomrule
-\end{tabular}
+\multicolumn{9}{@{}p{\linewidth}@{}}{\scriptsize Same degree-2 ridge and fit sets, scored on held-out architectures, 20 draws. raw, recal.: the target\textquotesingle s own labels as measured and recalibrated; transf.: a raw-scale prior fitted on the source named. Every recalibration win is at least 2.3 standard errors of the difference; Supplementary Table~S17 gives the standard errors and two further transfer arms. Control: FractalNet, accuracies not compressed.} \\
+\end{tabular*}
 \end{table}

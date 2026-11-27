@@ -13,9 +13,8 @@ IEEE Transactions on Neural Networks and Learning Systems, Full Paper:
     footnotes, references, displayed equations or tables. The bound is the venue's own, so a
     paper outside it fails this script rather than merely being noted.
   * 4 to 5 keywords (index terms).
-  * review is SINGLE-anonymous: the reviewers know the authors, so the submitted PDF must
-    carry the author block. This script therefore fails when \\blindtrue is set, which is
-    the opposite of what a double-anonymous venue needs.
+  * the submission is anonymized (double-anonymous): the submitted PDF must carry no author
+    block, so this script fails unless \\blindtrue is set.
   * no impact statement, no mandated section order and no title-length cap. Those are
     requirements of other IEEE titles; checking them here would fail a correct file.
 
@@ -128,9 +127,9 @@ REQUIRE_IMPACT = False
 IMPACT_MIN, IMPACT_MAX = 100, 150
 TITLE_MAX_WORDS = None
 TITLE_BANNED = ()
-#: Review is SINGLE-anonymous: the reviewers know the authors, so the submitted file must
-#: carry the author block and \\blindtrue would withhold it.
-REQUIRE_BLIND = False
+#: The submission is anonymized (double-anonymous), so the submitted file must withhold the
+#: author block: \\blindtrue.
+REQUIRE_BLIND = True
 
 PROBLEMS, NOTES = [], []
 

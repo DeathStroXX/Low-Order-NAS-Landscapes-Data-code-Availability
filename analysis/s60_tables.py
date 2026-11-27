@@ -113,15 +113,17 @@ def tab_bench_main(full):
         body = body[:-len(r'\addlinespace[2pt]\midrule')].rstrip()
     return '\n'.join([
         r'\begin{table}[!t]', r'\centering',
-        r'\caption{The concentration beyond NAS-Bench-201, and a measured null. \textbf{(a)} '
-        r'NAS-Bench-Macro, a second complete factorial. \textbf{(b)} The spectrum of the '
-        r'difference between two trainings of the same architectures, whose content is pure '
-        r'noise, beside the analytic white-noise null. \textbf{(c)} HW-NAS-Bench device '
-        r'measurements on the NAS-Bench-201 grid: an estimator that resolves a high-order tail '
-        r'when one is there (ranges over the measured columns). Shares of variance, \%. '
-        r'Supplementary Table~S15 adds the exactness certificates.}',
+        r'\caption{Low-order concentration on NAS-Bench-Macro, a measured null and a '
+        r'hardware noise floor}',
         r'\label{tab:bench_main}', r'\footnotesize', r'\setlength{\tabcolsep}{3.2pt}',
-        body, r'\bottomrule', r'\end{tabular}', r'\end{table}', ''])
+        body.replace(r'\begin{tabular}{', r'\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}', 1),
+        r'\bottomrule',
+        r'\multicolumn{6}{@{}p{\linewidth}@{}}{\scriptsize Shares of variance (\%). (a) '
+        r'NAS-Bench-Macro, CIFAR-10. (b) Difference between two trainings '
+        r'of the same architectures, beside the analytic white-noise null. (c) HW-NAS-Bench '
+        r'device measurements on the NAS-Bench-201 grid; ranges over the measured columns. '
+        r'Supplementary Table~S15 adds the exactness certificates.} \\',
+        r'\end{tabular*}', r'\end{table}', ''])
 
 
 def main():

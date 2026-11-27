@@ -302,7 +302,8 @@ def crossrefs():
     #: References *within* the supplement use \ref and need no pin; s52_consistency.py checks
     #: the same pointers in both directions and is the fuller instrument.
     PINNED = [('the novelty ledger', 'sec:sm_novelty', 'Supplementary Section~%s'),
-              ('the record and the surrogate', 'sec:sm_fractal', 'Supplementary Section~%s'),
+              ('the record, its selection effects and the surrogate',
+               ('sec:sm_threats', 'sec:sm_fractal'), 'Supplementary Sections~%s and~%s'),
               ('the rejected diagnostic', 'sec:sm_spaces', 'Supplementary Section~%s'),
               ('the dose-response', 'sec:sm_targets', 'Supplementary Section~%s'),
               ('the measurement findings', 'sec:sm_measure', 'Supplementary Section~%s'),
@@ -310,14 +311,17 @@ def crossrefs():
               ('the two further spaces', 'tab:zc_spaces', 'and~%s'),
               ('the controls figure', 'fig:sm_controls', 'Supplementary Fig.~%s')]
     for label, key, pattern in PINNED:
-        if key not in lab:
+        keys = key if isinstance(key, tuple) else (key,)
+        if any(k not in lab for k in keys):
             continue
-        want = pattern % lab[key] if '%s' in pattern else pattern
+        want = pattern % tuple(lab[k] for k in keys) if '%s' in pattern else pattern
+        key = ', '.join(keys)
+        lab_shown = ', '.join(lab[k] for k in keys)
         if want in TEXALL:
             OK.append('crossref %s: "%s"' % (label, want))
         else:
             BAD.append('crossref %s: main.tex (or a table it inputs) should contain "%s" '
-                       '(label %s is %s)' % (label, want, key, lab[key]))
+                       '(label %s is %s)' % (label, want, key, lab_shown))
 
 
 def absent(label, literal):

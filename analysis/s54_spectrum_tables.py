@@ -17,7 +17,7 @@ as a recessive dashed step and never competes with the data for a hue.
 
     python3 analysis/s54_spectrum_tables.py
 """
-import json
+import json, math
 import os
 import sys
 
@@ -38,6 +38,13 @@ HUE = {'cifar10': '#4C6EDB', 'cifar100': '#D4722B', 'ImageNet16-120': '#9B51C9'}
 INK, MUTED, GRID = '#1a1a1a', '#5b5b5b', '#d8d8d4'
 
 
+#: Main-paper tables follow the IEEE screening rule: a short title (no leading article, no final
+#: period) and every protocol, provenance and column gloss in a note row under \bottomrule. The
+#: table is set at full column width (tabular*) so the note row can span it exactly.
+def note_row(ncols, text):
+    return r'\multicolumn{%d}{@{}p{\linewidth}@{}}{\scriptsize %s} \\' % (ncols, text)
+
+
 def J(name='spectrum.json'):
     with open(os.path.join(RES, name)) as fh:
         return json.load(fh)
@@ -46,18 +53,10 @@ def J(name='spectrum.json'):
 def tab_spectrum(S, C=None):
     sp, rc, nl = S['spectrum'], S['spectrum_recalibrated'], S['null']
     L = [r'\begin{table}[!htb]', r'\centering',
-         r'\caption{The exact amplitude spectrum of the NAS-Bench-201 landscape: the share of '
-         r'accuracy variance carried at each interaction order. The space is a complete '
-         r'$5^{6}$ factorial, so the decomposition is exact and no model is fitted. '
-         r'\emph{Null} is where white noise would put its variance, fixed by the '
-         r'$\binom{6}{k}4^{k}$ basis directions at each order. \emph{Recal.} repeats the '
-         r'decomposition after a monotone recalibration of the accuracy scale. The last block '
-         r'is what $g_d$, the squared-error-optimal degree-$d$ function, achieves in the '
-         r'metrics a budget is decided in: attainable values, not bounds, and they do not '
-         r'order as the ceiling does.}',
+         r'\caption{Exact amplitude spectrum of NAS-Bench-201, by interaction order}',
          r'\label{tab:spectrum}', r'\footnotesize',
          r'\setlength{\tabcolsep}{3.4pt}',
-         r'\begin{tabular}{l rrr c rrr}', r'\toprule',
+         r'\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}l rrr c rrr}', r'\toprule',
          r'& \multicolumn{3}{c}{share of variance, raw} & Null & '
          r'\multicolumn{3}{c}{after recalibration} \\',
          r'\cmidrule(lr){2-4}\cmidrule(lr){6-8}',
@@ -96,7 +95,12 @@ def tab_spectrum(S, C=None):
             L.append(r'regret$(g_{%d})$ & %.2f & %.2f & %.2f & --- & %.2f & %.2f & %.2f \\'
                      % (k, *[lad[d]['raw'][k]['regret_at_10'] for d in DS],
                         *[lad[d]['rec'][k]['regret_at_10'] for d in DS]))
-    L += [r'\bottomrule', r'\end{tabular}', r'\end{table}', '']
+    L += [r'\bottomrule',
+          note_row(8, r'Shares of accuracy variance (\%). Null: white noise, from the '
+                      r'$\binom{6}{k}4^{k}$ basis directions at order $k$. Recal.: after a '
+                      r'monotone recalibration. $g_d$: the squared-error-optimal degree-$d$ '
+                      r'function; regret at a shortlist of ten, in accuracy points.'),
+          r'\end{tabular*}', r'\end{table}', '']
     return '\n'.join(L)
 
 
@@ -119,17 +123,11 @@ def tab_recal(S):
     R = S['recalibration']
     zmin = recal_margin(R)
     L = [r'\begin{table}[!htb]', r'\centering',
-         r'\caption{Recalibrating the target\textquotesingle s own labels against transferring '
-         r'a raw-scale prior from a harder dataset: same ridge, same fit sets, scored on the '
-         r'architectures none of them saw, 20 draws. Recalibration wins at every budget on '
-         r'both metrics' + (r', each win by at least %.1f standard errors of the difference' % zmin if zmin else '') + r'; Supplementary Table~S17 gives the standard errors and adds transfer with the source recalibrated '
-         r'too, and both sources combined. The last block is the control: where accuracies are '
-         r'not compressed the same recalibration buys almost no rank fidelity, lowers regret '
-         r'only slightly on CIFAR-10 and costs regret on CIFAR-100, as compression rather than '
-         r'ranks as the mechanism predicts.}',
+         r'\caption{Own recalibrated labels against a transferred raw-scale prior, with an '
+         r'uncompressed control}',
          r'\label{tab:recal}', r'\footnotesize',
          r'\setlength{\tabcolsep}{3.2pt}',
-         r'\begin{tabular}{l r rrr c rrr}', r'\toprule',
+         r'\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}l r rrr c rrr}', r'\toprule',
          r'& & \multicolumn{3}{c}{Spearman $\rho$} & & \multicolumn{3}{c}{regret at ten} \\',
          r'\cmidrule(lr){3-5}\cmidrule(lr){7-9}',
          r'Target & $n$ & raw & \textbf{recal.} & transf. & & raw & \textbf{recal.} & transf. '
@@ -153,7 +151,15 @@ def tab_recal(S):
                 L.append(r'\quad %s & %s & %.3f & %.3f & --- & & %.2f & %.2f & --- \\'
                          % (SHORT.get(ds, ds), n, b['own_raw']['rho'], b['own_recal']['rho'],
                             b['own_raw']['regret10'], b['own_recal']['regret10']))
-    L += [r'\bottomrule', r'\end{tabular}', r'\end{table}', '']
+    L += [r'\bottomrule',
+          note_row(9, r'Same degree-2 ridge and fit sets, scored on held-out architectures, 20 '
+                      r'draws. raw, recal.: the target\textquotesingle s own labels as measured '
+                      r'and recalibrated; transf.: a raw-scale prior fitted on the source named. '
+                      + (r'Every recalibration win is at least %.1f standard errors of the '
+                         r'difference; ' % (math.floor(10 * zmin) / 10) if zmin else '')
+                      + r'Supplementary Table~S17 gives the standard errors and two further '
+                        r'transfer arms. Control: FractalNet, accuracies not compressed.'),
+          r'\end{tabular*}', r'\end{table}', '']
     return '\n'.join(L)
 
 

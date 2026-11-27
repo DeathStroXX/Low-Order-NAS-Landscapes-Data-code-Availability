@@ -62,7 +62,7 @@ def fig_body_panels(layout='row'):
         a.plot(bud, [b[str(x)]['own_raw']['rho'] for x in bud], 'o--', ms=2.2, color=col,
                alpha=0.5, lw=0.9)
     a.axvline(375, color=C['grey'], lw=0.8, ls=':')
-    a.text(400, 0.86, '375\ncoefficients', fontsize=5.0, color=C['grey'], va='top')
+    a.text(400, 0.86, '375\npair cells', fontsize=5.0, color=C['grey'], va='top')
     a.text(0.03, 0.97, 'dashed: not recalibrated', fontsize=5.0, color=C['grey'],
            va='top', transform=a.transAxes)
     a.set_xscale('log')
