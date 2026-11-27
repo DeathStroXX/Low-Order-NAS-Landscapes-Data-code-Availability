@@ -175,7 +175,7 @@ pre-registered and not yet run.
 }
 ```
 
-Please also cite the article once it appears (PAPER-DOI-PLACEHOLDER).
+Please also cite the article once it appears; its DOI will be added here on publication.
 
 ---
 
